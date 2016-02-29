@@ -26,9 +26,9 @@ NEWCLASS: 'newclass' SPACES '\"'(.*?)'\"';
 INITPROPERTY:'initproperty' SPACES ANYTHING;
 TRAIT:'trait' ANYTHING;
 INCLUDE: '#include ''\"'(.*?)'\"';
-
+VERSION: '#version ' INTEGER;
 flashasm: program EOF;
-program: PROGRAM MINORVERSION MAJORVERSION (script)* (trait)* END;
+program: VERSION PROGRAM MINORVERSION MAJORVERSION (INCLUDE)* (script)* (trait)* END;
 script: SCRIPT SINIT REFID (body)* END;
 body: BODY MAXSTACK LOCALCOUNT INITSCOPEDEPTH MAXSCOPEDEPTH (code)* END ;
 code: CODE internalcode END;
