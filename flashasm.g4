@@ -56,6 +56,7 @@ PROGRAM: 'program';
 BODY: 'body';
 CODE: 'code';
 TRY: 'try';
+POP: 'pop';
 SCRIPT: 'script';
 MAXSTACK: 'maxstack ' INTEGER;
 REFID: 'refid \"'.*?'\"';
@@ -63,10 +64,31 @@ RETURNVIOD: 'returnvoid';
 LOCALCOUNT: 'localcount ' INTEGER;
 INITSCOPEDEPTH: 'initscopedepth ' INTEGER;
 MAXSCOPEDEPTH: 'maxscopedepth ' INTEGER;
+GETLOCAL: 'getlocal'SPACES [0-9];
 GETLOCAL0: 'getlocal0';
+GETLOCAL1: 'getlocal1';
+GETLOCAL2: 'getlocal2';
+GETLOCAL3: 'getlocal3';
+GETLOCAL4: 'getlocal4';
+SETLOCAL:  'setlocal' SPACES [0-9];
+SETLOCAL0: 'setlocal0';
+SETLOCAL1: 'setlocal1';
+SETLOCAL2: 'setlocal2';
+SETLOCAL3: 'setlocal3';
+SETLOCAL4: 'setlocal4';
+
+getsetlocal: (GETLOCAL |GETLOCAL0 | GETLOCAL1 | GETLOCAL2 | GETLOCAL3 | GETLOCAL4 |SETLOCAL| SETLOCAL0 | SETLOCAL1 | SETLOCAL2 | SETLOCAL3 | SETLOCAL4)+;
 PUSHSCOPE: 'pushscope';
 POPSCOPE: 'popscope';
 END : 'end';
+IINIT: 'iinit';
+CINIT: 'cinit';
+PUSHFALSE:'pushfalse';
+PUSHTRUE:'pushtrue';
+GETPROPERTY:'getproperty' SPACES ANYTHING;
+FINDPROPERTY:'findproperty' SPACES ANYTHING;
+CALLPROPERTY: 'callproperty' SPACES ANYTHING;
+RETURNVALUE:'returnvalue';
 MINORVERSION: 'minorversion ' INTEGER;
 MAJORVERSION: 'majorversion ' INTEGER;
 SINIT: 'sinit';
@@ -76,14 +98,36 @@ NEWCLASS: 'newclass' SPACES '\"'(.*?)'\"';
 INITPROPERTY:'initproperty' SPACES ANYTHING;
 TRAIT:'trait' ANYTHING;
 INCLUDE: '#include ';
+FINDPROPSTRICT:'findpropstrict' SPACES ANYTHING;
 include: INCLUDE FileName {insertTokens($FileName.text);};
 VERSION: '#version ' INTEGER;
+LABEL: [A-Z]*[0-9]*':\n';
 flashasm: program EOF;
 program: VERSION PROGRAM MINORVERSION MAJORVERSION (include)* (script)* (trait)* END;
 script: SCRIPT SINIT REFID (body)* END;
 body: BODY MAXSTACK LOCALCOUNT INITSCOPEDEPTH MAXSCOPEDEPTH (code)* END ;
 code: CODE internalcode END;
-internalcode: (GETLOCAL0 |POPSCOPE |PUSHSCOPE |GETSCOPEOBJECT |GETLEX |NEWCLASS|INITPROPERTY |RETURNVIOD |TRAIT)+;
+internalcode: (
+getsetlocal
+|POP
+|POPSCOPE
+|PUSHSCOPE
+|GETSCOPEOBJECT
+|GETLEX
+|NEWCLASS
+|INITPROPERTY
+|RETURNVIOD
+|TRAIT
+|FINDPROPSTRICT
+|PUSHFALSE
+|RETURNVALUE
+|GETPROPERTY
+|FINDPROPERTY
+|CALLPROPERTY
+|IINIT
+|CINIT
+|LABEL
+)+;
 trait: TRAIT include END;
 
 //WS : (.+) -> skip;
