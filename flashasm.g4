@@ -52,6 +52,7 @@ grammar flashasm;
 fragment INTEGER: [0-9]+;
 fragment SPACES: ' '*;
 fragment ANYTHING: (.*?)'\n';
+QUOTE:'\"'(.*?)'\"';
 PROGRAM: 'program';
 BODY: 'body';
 CODE: 'code';
@@ -59,7 +60,8 @@ TRY: 'try';
 POP: 'pop';
 SCRIPT: 'script';
 MAXSTACK: 'maxstack ' INTEGER;
-REFID: 'refid \"'.*?'\"';
+REFID: 'refid';
+refid: REFID QUOTE;
 RETURNVIOD: 'returnvoid';
 LOCALCOUNT: 'localcount ' INTEGER;
 INITSCOPEDEPTH: 'initscopedepth ' INTEGER;
@@ -76,8 +78,7 @@ SETLOCAL1: 'setlocal1';
 SETLOCAL2: 'setlocal2';
 SETLOCAL3: 'setlocal3';
 SETLOCAL4: 'setlocal4';
-
-getsetlocal: (GETLOCAL |GETLOCAL0 | GETLOCAL1 | GETLOCAL2 | GETLOCAL3 | GETLOCAL4 |SETLOCAL| SETLOCAL0 | SETLOCAL1 | SETLOCAL2 | SETLOCAL3 | SETLOCAL4)+;
+CLASS: 'class';
 PUSHSCOPE: 'pushscope';
 POPSCOPE: 'popscope';
 END : 'end';
@@ -93,29 +94,67 @@ MINORVERSION: 'minorversion ' INTEGER;
 MAJORVERSION: 'majorversion ' INTEGER;
 SINIT: 'sinit';
 GETSCOPEOBJECT: 'getscopeobject' SPACES INTEGER;
-GETLEX: 'getlex' ANYTHING;
-NEWCLASS: 'newclass' SPACES '\"'(.*?)'\"';
-INITPROPERTY:'initproperty' SPACES ANYTHING;
-TRAIT:'trait' ANYTHING;
+GETLEX: 'getlex';
+qnamefun:QNAME PACKAGENAMESPACE QUOTE ')'','QUOTE')';
+getlex:GETLEX qnamefun;
+NEWCLASS: 'newclass';
+newclass:NEWCLASS QUOTE;
+INITPROPERTY:'initproperty';
+initproperty: INITPROPERTY qnamefun;
+TRAIT:'trait';
 INCLUDE: '#include ';
+INSTANCE:'instance';
+EXTENDSF: 'extends';
+extendsf: EXTENDSF qnamefun;
+FLAG: 'flag ' ANYTHING;
+PROTECTEDNS: 'protectedns ' ANYTHING;
 FINDPROPSTRICT:'findpropstrict' SPACES ANYTHING;
+CONSTRUCTSUPER: 'constructsuper' SPACES [0-9]+;
+CONSTRUCTPROP: 'constructprop' SPACES ANYTHING;
+PUSHSTRING: 'pushstring';
+pushstring:PUSHSTRING QUOTE;
+COERCE:'coerce';
+coerce: COERCE qnamefun;
+SETPROPERTY:'setproperty';
+setproperty:SETPROPERTY qnamefun;
+CALLPROPVOID: 'callpropvoid' SPACES ANYTHING;
+PACKAGENAMESPACE:'PackageNamespace(';
+QNAME:'QName(';
 include: INCLUDE FileName {insertTokens($FileName.text);};
 VERSION: '#version ' INTEGER;
-LABEL: [A-Z]*[0-9]*':\n';
+SLOTID:'slotid '[0-9];
+LABEL: 'L'[0-9]*':\n';
+//start here
 flashasm: program EOF;
-program: VERSION PROGRAM MINORVERSION MAJORVERSION (include)* (script)* (trait)* END;
-script: SCRIPT SINIT REFID (body)* END;
+program: VERSION PROGRAM MINORVERSION MAJORVERSION (script)* END;
+script: SCRIPT (sinit)* (trait)*  END;
 body: BODY MAXSTACK LOCALCOUNT INITSCOPEDEPTH MAXSCOPEDEPTH (code)* END ;
 code: CODE internalcode END;
+flashasmclass: CLASS refid (instance)* (cinit)* END;
+iinit: IINIT refid (body)* END;
+cinit: CINIT refid (body)* END;
+sinit: SINIT refid (body)* END;
+instance: INSTANCE qnamefun (extendsf) (FLAG)* PROTECTEDNS (iinit)* END;
 internalcode: (
-getsetlocal
+GETLOCAL
+|GETLOCAL0
+|GETLOCAL1
+|GETLOCAL2
+|GETLOCAL3
+|GETLOCAL4
+|SETLOCAL
+|SETLOCAL0
+|SETLOCAL1
+|SETLOCAL2
+|SETLOCAL3
+|SETLOCAL4
 |POP
 |POPSCOPE
 |PUSHSCOPE
 |GETSCOPEOBJECT
-|GETLEX
-|NEWCLASS
-|INITPROPERTY
+|getlex
+|newclass
+|initproperty
 |RETURNVIOD
 |TRAIT
 |FINDPROPSTRICT
@@ -124,13 +163,18 @@ getsetlocal
 |GETPROPERTY
 |FINDPROPERTY
 |CALLPROPERTY
-|IINIT
-|CINIT
 |LABEL
+|CONSTRUCTSUPER
+|CONSTRUCTPROP
+|coerce
+|pushstring
+|setproperty
+|CALLPROPVOID
 )+;
-trait: TRAIT include END;
 
-//WS : (.+) -> skip;
+trait: TRAIT CLASS qnamefun SLOTID (flashasmclass)* END;
+
+
 
 WS
    : (' ' | '\t' | '\n' | '\r') -> skip
