@@ -53,7 +53,7 @@ fragment INTEGER: [0-9]+;
 fragment SPACES: ' '*;
 fragment ANYTHING: (.*?)'\n';
 fragment IDENTIFYER:[A-Za-z][A-Za-z0-9]*;
-QUOTE:'\"' [^\"]* '\"';
+QUOTE: '"' (~('"' | '\\' | '\r' | '\n') | '\\' ('"' | '\\'))* '"';
 PROGRAM: 'program';
 BODY: 'body';
 CODE: 'code';
@@ -268,7 +268,7 @@ traitcl: TRAIT CLASS qnamefun (SLOTID)* (flashasmclass)*? (script)*? END;
 traitcon: TRAIT CONST qnamefun  SLOTID TYPE qnamefun VALUE (traitconvalues)* END;
 traitconvalues: ( (UTF8'('QUOTE')') | 'Null()' | 'False()');
 traitm: TRAIT METHOD qnamefun (flashasmmethod)* END;
-traitsl: TRAIT 'slot' qnamefun TYPE  qnamefun (VALUE (traitconvalues)*)* END;
+traitsl: TRAIT 'slot' qnamefun (SLOTID)? TYPE qnamefun (VALUE (traitconvalues)*)* END;
 traitg: TRAIT 'getter' qnamefun (flashasmmethod) END;
 traitset: TRAIT 'setter' qnamefun (flashasmmethod)* END;
 
