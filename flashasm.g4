@@ -52,6 +52,7 @@ grammar flashasm;
 fragment INTEGER: [0-9]+;
 fragment SPACES: ' '*;
 fragment ANYTHING: (.*?)'\n';
+fragment IDENTIFYER:[A-Za-z][A-Za-z0-9]*;
 QUOTE:'\"'(.*?)'\"';
 PROGRAM: 'program';
 BODY: 'body';
@@ -66,13 +67,13 @@ RETURNVIOD: 'returnvoid';
 LOCALCOUNT: 'localcount ' INTEGER;
 INITSCOPEDEPTH: 'initscopedepth ' INTEGER;
 MAXSCOPEDEPTH: 'maxscopedepth ' INTEGER;
-GETLOCAL: 'getlocal'SPACES [0-9];
+GETLOCAL: 'getlocal'SPACES [0-9]*;
 GETLOCAL0: 'getlocal0';
 GETLOCAL1: 'getlocal1';
 GETLOCAL2: 'getlocal2';
 GETLOCAL3: 'getlocal3';
 GETLOCAL4: 'getlocal4';
-SETLOCAL:  'setlocal' SPACES [0-9];
+SETLOCAL:  'setlocal' SPACES [0-9]*;
 SETLOCAL0: 'setlocal0';
 SETLOCAL1: 'setlocal1';
 SETLOCAL2: 'setlocal2';
@@ -86,22 +87,27 @@ IINIT: 'iinit';
 CINIT: 'cinit';
 PUSHFALSE:'pushfalse';
 PUSHTRUE:'pushtrue';
-GETPROPERTY:'getproperty' SPACES ANYTHING;
+GETPROPERTY:'getproperty' SPACES ANYTHING'\n';
 FINDPROPERTY:'findproperty' SPACES ANYTHING;
 CALLPROPERTY: 'callproperty' SPACES ANYTHING;
+IMPLEMENTS:'implements' ANYTHING;
 RETURNVALUE:'returnvalue';
 MINORVERSION: 'minorversion ' INTEGER;
 MAJORVERSION: 'majorversion ' INTEGER;
 SINIT: 'sinit';
+PARAM: 'param';
+param: PARAM qnamefun;
 GETSCOPEOBJECT: 'getscopeobject' SPACES INTEGER;
 GETLEX: 'getlex';
-qnamefun:QNAME PACKAGENAMESPACE QUOTE ')'','QUOTE')';
+qnamefun:QNAME '(' (PACKAGENAMESPACE| PRIVATENAMESPACE | NAMESPACE ) qnameparams;
+qnameparams: ('(' (QUOTE| NULL) ')'','QUOTE')') | ('(' (QUOTE| NULL)','(QUOTE| NULL)')'','QUOTE')') ;
 getlex:GETLEX qnamefun;
 NEWCLASS: 'newclass';
 newclass:NEWCLASS QUOTE;
 INITPROPERTY:'initproperty';
 initproperty: INITPROPERTY qnamefun;
 TRAIT:'trait';
+NULL:'null';
 INCLUDE: '#include ';
 INSTANCE:'instance';
 EXTENDSF: 'extends';
@@ -114,27 +120,82 @@ CONSTRUCTPROP: 'constructprop' SPACES ANYTHING;
 PUSHSTRING: 'pushstring';
 pushstring:PUSHSTRING QUOTE;
 COERCE:'coerce';
+SUBTRACT:'subtract';
+DUPLICATE:'dup';
+INCREMENT:'increment';
+MULTINAMEL:'MultinameL';
 coerce: COERCE qnamefun;
-SETPROPERTY:'setproperty';
-setproperty:SETPROPERTY qnamefun;
+SETPROPERTY:'setproperty' SPACES ANYTHING;
+//setproperty:SETPROPERTY qnamefun;
 CALLPROPVOID: 'callpropvoid' SPACES ANYTHING;
-PACKAGENAMESPACE:'PackageNamespace(';
-QNAME:'QName(';
+PACKAGENAMESPACE:'PackageNamespace';
+NAMESPACE:'Namespace';
+PRIVATENAMESPACE:'PrivateNamespace';
+QNAME:'QName';
+METHOD:'method';
+LABEL:'label';
+RETURNS:'returns' ANYTHING;
+OPTIONAL:'optional' ANYTHING;
 //include: INCLUDE FileName {insertTokens($FileName.text);};
 VERSION: '#version ' INTEGER;
 SLOTID:'slotid '[0-9];
-LABEL: 'L'[0-9]*':\n';
+JLABEL:IDENTIFYER':';
+JUMP:'jump' SPACES IDENTIFYER;
+CONVERT_D:'convert_d';
+KILL: 'kill' SPACES INTEGER;
+PUSHBYTE:'pushbyte' SPACES INTEGER;
+PUSHNULL:'pushnull';
+IFFALSE:'iffalse' SPACES IDENTIFYER;
+CONSTRUCT:'construct' SPACES INTEGER;
+CONST:'const';
+TYPE: 'type';
+VALUE:'value';
+UTF8:'Utf8';
+EQUALS:'equals';
+NOT:'not';
+IFTRUE:'iftrue' SPACES IDENTIFYER;
+THROW:'throw';
+CONVERT_B:'convert_b';
+IFNE:'ifne' SPACES IDENTIFYER;
+NEWARRAY:'newarray' SPACES INTEGER;
+CONVERT_I:'convert_i';
+INCLOCAL_I:'inclocal_i' SPACES INTEGER;
+IFLT:'iflt' SPACES IDENTIFYER;
+IFGT:'ifgt' SPACES IDENTIFYER;
+IFNGT:'ifngt' SPACES IDENTIFYER;
+ADD:'add';
+MULTIPLY:'multiply';
+DIVIDE:'divide';
+LESSTHAN:'lessthan';
+NEWOBJECT:'newobject' SPACES INTEGER;
+SETSLOT:'setslot' SPACES INTEGER;
+GETSLOT:'getslot' SPACES INTEGER;
+LSHIFT:'lshift';
+BITAND:'bitand';
+RSHIFT:'rshift';
+ISTYPELATE:'istypelate';
+IFEQ:'ifeq' SPACES IDENTIFYER;
+CONVERT_U:'convert_u';
+PUSHINT:'pushint' SPACES INTEGER;
+PUSHNAN:'pushnan';
+PUSHSHORT:'pushshort' SPACES INTEGER;
+GREATERTHAN:'greaterthan';
+DECREMENT:'decrement';
+GREATEREQUALS:'greaterequals';
+IFNLE:'ifnle' SPACES IDENTIFYER;
+PUSHUNDEFINED:'pushundefined';
 //start here
 flashasm: program EOF;
 program: VERSION PROGRAM MINORVERSION MAJORVERSION (script)* END;
 script: SCRIPT (sinit)* (trait)*  END;
 body: BODY MAXSTACK LOCALCOUNT INITSCOPEDEPTH MAXSCOPEDEPTH (code)* END ;
 code: CODE internalcode END;
-flashasmclass: CLASS refid (instance)* (cinit)* END;
-iinit: IINIT refid (body)* END;
+flashasmclass: CLASS refid (instance)* (cinit)* (trait)* END;
+flashasmmethod: METHOD refid (param)* (RETURNS) (FLAG)*? (OPTIONAL)*? (body)*? END;
+iinit: IINIT refid (param)* (body)*  END;
 cinit: CINIT refid (body)* END;
 sinit: SINIT refid (body)* END;
-instance: INSTANCE qnamefun (extendsf) (FLAG)* PROTECTEDNS (iinit)* END;
+instance: INSTANCE qnamefun (extendsf)*? (IMPLEMENTS)* (FLAG)* (PROTECTEDNS)* (iinit)* (trait)*? (flashasmmethod)* END;
 internalcode: (
 GETLOCAL
 |GETLOCAL0
@@ -163,16 +224,52 @@ GETLOCAL
 |GETPROPERTY
 |FINDPROPERTY
 |CALLPROPERTY
-|LABEL
+|JLABEL
 |CONSTRUCTSUPER
 |CONSTRUCTPROP
 |coerce
 |pushstring
-|setproperty
+|SETPROPERTY
 |CALLPROPVOID
-)+;
+|SUBTRACT
+|DUPLICATE
+|INCREMENT
+|JUMP
+|CONVERT_D
+|KILL
+|PUSHBYTE
+|LABEL
+|IFFALSE
+|PUSHTRUE
+|PUSHNULL
+|EQUALS
+|NOT
+|IFTRUE
+|THROW
+|CONVERT_B
+|IFNE
+|NEWARRAY
+|INCLOCAL_I
+|IFLT
+|CONSTRUCT
+|CONVERT_I
+|ADD
+|NEWOBJECT
+|GREATEREQUALS
+|GREATERTHAN
+|ISTYPELATE
 
-trait: TRAIT CLASS qnamefun SLOTID (flashasmclass)* END;
+
+
+)+;
+trait: traitcl | traitm | traitsl | traitg | traitcon |traitset;
+traitcl: TRAIT CLASS qnamefun (SLOTID)* (flashasmclass)* END;
+traitcon: TRAIT CONST qnamefun  SLOTID TYPE qnamefun VALUE (traitconvalues)* END;
+traitconvalues: ( (UTF8'('QUOTE')') | 'Null()' | 'False()');
+traitm: TRAIT METHOD qnamefun (flashasmmethod)* END;
+traitsl: TRAIT 'slot' qnamefun TYPE  qnamefun (VALUE (traitconvalues)*)* END;
+traitg: TRAIT 'getter' qnamefun (flashasmmethod) END;
+traitset: TRAIT 'setter' qnamefun (flashasmmethod)* END;
 
 
 
