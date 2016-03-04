@@ -1,0 +1,184 @@
+class
+ refid "mx.managers:ISystemManager"
+ instance QName(PackageNamespace("mx.managers"), "ISystemManager")
+  implements Multiname("IEventDispatcher", [PackageNamespace("flash.events")])
+  implements Multiname("IChildList", [PackageNamespace("mx.core")])
+  implements Multiname("IFlexModuleFactory", [PackageNamespace("mx.core")])
+  flag SEALED
+  flag INTERFACE
+  iinit
+   refid "mx.managers:ISystemManager/instance/init"
+  end ; method
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "cursorChildren")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:cursorChildren/getter"
+    returns QName(PackageNamespace("mx.core"), "IChildList")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "document")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:document/getter"
+    returns QName(PackageNamespace(""), "Object")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.managers:ISystemManager"), "document")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:document/setter"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "embeddedFontList")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:embeddedFontList/getter"
+    returns QName(PackageNamespace(""), "Object")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "focusPane")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:focusPane/getter"
+    returns QName(PackageNamespace("flash.display"), "Sprite")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.managers:ISystemManager"), "focusPane")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:focusPane/setter"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "isProxy")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:isProxy/getter"
+    returns QName(PackageNamespace(""), "Boolean")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "loaderInfo")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:loaderInfo/getter"
+    returns QName(PackageNamespace("flash.display"), "LoaderInfo")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "numModalWindows")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:numModalWindows/getter"
+    returns QName(PackageNamespace(""), "int")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.managers:ISystemManager"), "numModalWindows")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:numModalWindows/setter"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "popUpChildren")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:popUpChildren/getter"
+    returns QName(PackageNamespace("mx.core"), "IChildList")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "rawChildren")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:rawChildren/getter"
+    returns QName(PackageNamespace("mx.core"), "IChildList")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "screen")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:screen/getter"
+    returns QName(PackageNamespace("flash.geom"), "Rectangle")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "stage")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:stage/getter"
+    returns QName(PackageNamespace("flash.display"), "Stage")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "toolTipChildren")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:toolTipChildren/getter"
+    returns QName(PackageNamespace("mx.core"), "IChildList")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.managers:ISystemManager"), "topLevelSystemManager")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:topLevelSystemManager/getter"
+    returns QName(PackageNamespace("mx.managers"), "ISystemManager")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "getDefinitionByName")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:getDefinitionByName"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Object")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "isTopLevel")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:isTopLevel"
+    returns QName(PackageNamespace(""), "Boolean")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "isFontFaceEmbedded")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:isFontFaceEmbedded"
+    param QName(PackageNamespace("flash.text"), "TextFormat")
+    returns QName(PackageNamespace(""), "Boolean")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "isTopLevelRoot")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:isTopLevelRoot"
+    returns QName(PackageNamespace(""), "Boolean")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "getTopLevelRoot")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:getTopLevelRoot"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "getSandboxRoot")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:getSandboxRoot"
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "getVisibleApplicationRect")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:getVisibleApplicationRect"
+    param QName(PackageNamespace("flash.geom"), "Rectangle")
+    returns QName(PackageNamespace("flash.geom"), "Rectangle")
+    flag HAS_OPTIONAL
+    optional Null()
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "deployMouseShields")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:deployMouseShields"
+    param QName(PackageNamespace(""), "Boolean")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManager"), "invalidateParentSizeAndDisplayList")
+   method
+    refid "mx.managers:ISystemManager/instance/mx.managers:ISystemManager:invalidateParentSizeAndDisplayList"
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.managers:ISystemManager/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

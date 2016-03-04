@@ -1,0 +1,443 @@
+class
+ refid "mx.utils:LoaderUtil"
+ instance QName(PackageNamespace("mx.utils"), "LoaderUtil")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("mx.utils:LoaderUtil")
+  iinit
+   refid "mx.utils:LoaderUtil/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "mx.utils:LoaderUtil/class/init"
+  body
+   maxstack 6
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+    pushstring          "4.0.0.14159"
+    initproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "urlFilters")
+    pushstring          "searchString"
+    pushstring          "/[[DYNAMIC]]/"
+    pushstring          "filterFunction"
+    getlex              QName(PrivateNamespace(null, "mx.utils:LoaderUtil/class"), "dynamicURLFilter")
+    newobject           2
+    pushstring          "searchString"
+    pushstring          "/[[IMPORT]]/"
+    pushstring          "filterFunction"
+    getlex              QName(PrivateNamespace(null, "mx.utils:LoaderUtil/class"), "importURLFilter")
+    newobject           2
+    newarray            2
+    setproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "urlFilters")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("4.0.0.14159") end
+ trait slot QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "urlFilters") slotid 2 type QName(PackageNamespace(""), "Array") end
+ trait method QName(PackageNamespace(""), "normalizeURL") flag FINAL dispid 3
+  method
+   refid "mx.utils:LoaderUtil/class/normalizeURL"
+   param QName(PackageNamespace("flash.display"), "LoaderInfo")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 4
+    localcount 9
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal3
+
+     pushnull
+     coerce_s
+     setlocal            4
+
+     pushnull
+     coerce              QName(PackageNamespace(""), "Function")
+     setlocal            5
+
+     getlocal1
+     getproperty         QName(PackageNamespace(""), "url")
+     coerce_s
+     setlocal2
+
+     getlex              QName(PackageNamespace("mx.utils"), "LoaderUtil")
+     getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "urlFilters")
+     getproperty         QName(PackageNamespace(""), "length")
+     convert_u
+     setlocal            6
+
+     pushbyte            0
+     convert_u
+     setlocal            7
+
+     jump                L60
+
+L23:
+     label
+     getlex              QName(PackageNamespace("mx.utils"), "LoaderUtil")
+     getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "urlFilters")
+     getlocal            7
+     getproperty         MultinameL([PrivateNamespace(null, "mx.utils:LoaderUtil/class"), Namespace("http://www.adobe.com/2006/flex/mx/internal"), PackageNamespace(""), PackageNamespace("mx.utils"), PrivateNamespace(null, "mx.utils:LoaderUtil/class/normalizeURL"), PackageInternalNs("mx.utils"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.utils:LoaderUtil"), StaticProtectedNs("mx.utils:LoaderUtil"), StaticProtectedNs("Object")])
+     getproperty         Multiname("searchString", [PrivateNamespace(null, "mx.utils:LoaderUtil/class"), Namespace("http://www.adobe.com/2006/flex/mx/internal"), PackageNamespace(""), PackageNamespace("mx.utils"), PrivateNamespace(null, "mx.utils:LoaderUtil/class/normalizeURL"), PackageInternalNs("mx.utils"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.utils:LoaderUtil"), StaticProtectedNs("mx.utils:LoaderUtil"), StaticProtectedNs("Object")])
+     coerce_s
+     setlocal            4
+
+     getlocal2
+     getlocal            4
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     dup
+     setlocal            8
+
+     convert_i
+     setlocal3
+
+     getlocal            8
+     kill                8
+     pushbyte            -1
+     ifeq                L56
+
+     getlex              QName(PackageNamespace("mx.utils"), "LoaderUtil")
+     getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "urlFilters")
+     getlocal            7
+     getproperty         MultinameL([PrivateNamespace(null, "mx.utils:LoaderUtil/class"), Namespace("http://www.adobe.com/2006/flex/mx/internal"), PackageNamespace(""), PackageNamespace("mx.utils"), PrivateNamespace(null, "mx.utils:LoaderUtil/class/normalizeURL"), PackageInternalNs("mx.utils"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.utils:LoaderUtil"), StaticProtectedNs("mx.utils:LoaderUtil"), StaticProtectedNs("Object")])
+     getproperty         Multiname("filterFunction", [PrivateNamespace(null, "mx.utils:LoaderUtil/class"), Namespace("http://www.adobe.com/2006/flex/mx/internal"), PackageNamespace(""), PackageNamespace("mx.utils"), PrivateNamespace(null, "mx.utils:LoaderUtil/class/normalizeURL"), PackageInternalNs("mx.utils"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.utils:LoaderUtil"), StaticProtectedNs("mx.utils:LoaderUtil"), StaticProtectedNs("Object")])
+     coerce              QName(PackageNamespace(""), "Function")
+     dup
+     setlocal            5
+
+     getglobalscope
+     getlocal2
+     getlocal3
+     call                2
+     coerce_s
+     setlocal2
+
+L56:
+     getlocal            7
+     increment
+     convert_u
+     setlocal            7
+
+L60:
+     getlocal            7
+     getlocal            6
+     iflt                L23
+
+     findpropstrict      QName(PrivateNamespace(null, "mx.utils:LoaderUtil/class"), "isMac")
+     callproperty        QName(PrivateNamespace(null, "mx.utils:LoaderUtil/class"), "isMac"), 0
+     iffalse             L70
+
+     findpropstrict      QName(PackageNamespace(""), "encodeURI")
+     getlocal2
+     callproperty        QName(PackageNamespace(""), "encodeURI"), 1
+     returnvalue
+
+L70:
+     getlocal2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "createAbsoluteURL") flag FINAL dispid 4
+  method
+   refid "mx.utils:LoaderUtil/class/createAbsoluteURL"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "String")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 6
+    localcount 7
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     pushbyte            0
+     setlocal            4
+
+     pushbyte            0
+     setlocal            5
+
+     getlocal2
+     coerce_s
+     setlocal3
+
+     getlocal1
+     convert_b
+     dup
+     iffalse             L36
+
+     pop
+     getlocal2
+     pushstring          ":"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     pushbyte            -1
+     greaterthan
+     dup
+     iftrue              L27
+
+     pop
+     getlocal2
+     pushstring          "/"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     pushbyte            0
+     equals
+L27:
+     dup
+     iftrue              L35
+
+     pop
+     getlocal2
+     pushstring          "\\"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     pushbyte            0
+     equals
+L35:
+     not
+L36:
+     iffalse             L131
+
+     getlocal1
+     pushstring          "?"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     dup
+     setlocal            6
+
+     convert_i
+     setlocal            4
+
+     getlocal            6
+     kill                6
+     pushbyte            -1
+     ifeq                L54
+
+     getlocal1
+     pushbyte            0
+     getlocal            4
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 2
+     coerce_s
+     setlocal1
+
+L54:
+     getlocal1
+     pushstring          "#"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     dup
+     setlocal            6
+
+     convert_i
+     setlocal            4
+
+     getlocal            6
+     kill                6
+     pushbyte            -1
+     ifeq                L71
+
+     getlocal1
+     pushbyte            0
+     getlocal            4
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 2
+     coerce_s
+     setlocal1
+
+L71:
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal1
+     pushstring          "\\"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "lastIndexOf"), 1
+     getlocal1
+     pushstring          "/"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "lastIndexOf"), 1
+     callproperty        QName(PackageNamespace(""), "max"), 2
+     convert_i
+     setlocal            5
+
+     getlocal2
+     pushstring          "./"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     pushbyte            0
+     ifne                L92
+
+     getlocal2
+     pushbyte            2
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 1
+     coerce_s
+     setlocal2
+
+     jump                L118
+
+L92:
+     jump                L113
+
+L93:
+     label
+     getlocal2
+     pushbyte            3
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 1
+     coerce_s
+     setlocal2
+
+     getlex              QName(PackageNamespace(""), "Math")
+     getlocal1
+     pushstring          "\\"
+     getlocal            5
+     decrement
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "lastIndexOf"), 2
+     getlocal1
+     pushstring          "/"
+     getlocal            5
+     decrement
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "lastIndexOf"), 2
+     callproperty        QName(PackageNamespace(""), "max"), 2
+     convert_i
+     setlocal            5
+
+L113:
+     getlocal2
+     pushstring          "../"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     pushbyte            0
+     ifeq                L93
+
+L118:
+     getlocal            5
+     pushbyte            -1
+     ifeq                L131
+
+     getlocal1
+     pushbyte            0
+     getlocal            5
+     pushbyte            1
+     add
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substr"), 2
+     getlocal2
+     add
+     coerce_s
+     setlocal3
+
+L131:
+     getlocal3
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "mx.utils:LoaderUtil/class"), "isMac") flag FINAL dispid 5
+  method
+   refid "mx.utils:LoaderUtil/class/mx.utils:LoaderUtil/class/isMac"
+   returns QName(PackageNamespace(""), "Boolean")
+   body
+    maxstack 3
+    localcount 1
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlex              QName(PackageNamespace("flash.system"), "Capabilities")
+     getproperty         QName(PackageNamespace(""), "os")
+     pushbyte            0
+     pushbyte            3
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 2
+     pushstring          "Mac"
+     equals
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "mx.utils:LoaderUtil/class"), "dynamicURLFilter") flag FINAL dispid 6
+  method
+   refid "mx.utils:LoaderUtil/class/mx.utils:LoaderUtil/class/dynamicURLFilter"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 3
+    localcount 3
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     pushbyte            0
+     getlocal2
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 2
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PrivateNamespace(null, "mx.utils:LoaderUtil/class"), "importURLFilter") flag FINAL dispid 7
+  method
+   refid "mx.utils:LoaderUtil/class/mx.utils:LoaderUtil/class/importURLFilter"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "int")
+   returns QName(PackageNamespace(""), "String")
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     pushstring          "://"
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "indexOf"), 1
+     convert_i
+     setlocal3
+
+     getlocal1
+     pushbyte            0
+     getlocal3
+     pushbyte            3
+     add
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 2
+     getlocal1
+     getlocal2
+     pushbyte            12
+     add
+     callproperty        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "substring"), 1
+     add
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

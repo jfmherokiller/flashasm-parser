@@ -1,0 +1,184 @@
+class
+ refid "mx.events:SandboxMouseEvent"
+ instance QName(PackageNamespace("mx.events"), "SandboxMouseEvent")
+  extends QName(PackageNamespace("flash.events"), "Event")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("mx.events:SandboxMouseEvent")
+  iinit
+   refid "mx.events:SandboxMouseEvent/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   optional False()
+   optional False()
+   optional False()
+   optional False()
+   optional False()
+   optional False()
+   body
+    maxstack 4
+    localcount 8
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     constructsuper      3
+
+     getlocal0
+     getlocal            4
+     initproperty        QName(PackageNamespace(""), "ctrlKey")
+
+     getlocal0
+     getlocal            5
+     initproperty        QName(PackageNamespace(""), "altKey")
+
+     getlocal0
+     getlocal            6
+     initproperty        QName(PackageNamespace(""), "shiftKey")
+
+     getlocal0
+     getlocal            7
+     initproperty        QName(PackageNamespace(""), "buttonDown")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "altKey") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "buttonDown") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "ctrlKey") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "shiftKey") type QName(PackageNamespace(""), "Boolean") end
+  trait method QName(PackageNamespace(""), "clone") flag OVERRIDE
+   method
+    refid "mx.events:SandboxMouseEvent/instance/clone"
+    returns QName(PackageNamespace("flash.events"), "Event")
+    body
+     maxstack 8
+     localcount 1
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("mx.events"), "SandboxMouseEvent")
+      getlex              QName(PackageNamespace(""), "type")
+      getlex              QName(PackageNamespace(""), "bubbles")
+      getlex              QName(PackageNamespace(""), "cancelable")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "ctrlKey")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "altKey")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "shiftKey")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "buttonDown")
+      constructprop       QName(PackageNamespace("mx.events"), "SandboxMouseEvent"), 7
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.events:SandboxMouseEvent/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+    pushstring          "4.0.0.14159"
+    initproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+
+    findproperty        QName(PackageNamespace(""), "CLICK_SOMEWHERE")
+    pushstring          "clickSomewhere"
+    initproperty        QName(PackageNamespace(""), "CLICK_SOMEWHERE")
+
+    findproperty        QName(PackageNamespace(""), "DOUBLE_CLICK_SOMEWHERE")
+    pushstring          "coubleClickSomewhere"
+    initproperty        QName(PackageNamespace(""), "DOUBLE_CLICK_SOMEWHERE")
+
+    findproperty        QName(PackageNamespace(""), "MOUSE_DOWN_SOMEWHERE")
+    pushstring          "mouseDownSomewhere"
+    initproperty        QName(PackageNamespace(""), "MOUSE_DOWN_SOMEWHERE")
+
+    findproperty        QName(PackageNamespace(""), "MOUSE_MOVE_SOMEWHERE")
+    pushstring          "mouseMoveSomewhere"
+    initproperty        QName(PackageNamespace(""), "MOUSE_MOVE_SOMEWHERE")
+
+    findproperty        QName(PackageNamespace(""), "MOUSE_UP_SOMEWHERE")
+    pushstring          "mouseUpSomewhere"
+    initproperty        QName(PackageNamespace(""), "MOUSE_UP_SOMEWHERE")
+
+    findproperty        QName(PackageNamespace(""), "MOUSE_WHEEL_SOMEWHERE")
+    pushstring          "mouseWheelSomewhere"
+    initproperty        QName(PackageNamespace(""), "MOUSE_WHEEL_SOMEWHERE")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("4.0.0.14159") end
+ trait const QName(PackageNamespace(""), "CLICK_SOMEWHERE") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("clickSomewhere") end
+ trait const QName(PackageNamespace(""), "DOUBLE_CLICK_SOMEWHERE") slotid 3 type QName(PackageNamespace(""), "String") value Utf8("coubleClickSomewhere") end
+ trait const QName(PackageNamespace(""), "MOUSE_DOWN_SOMEWHERE") slotid 4 type QName(PackageNamespace(""), "String") value Utf8("mouseDownSomewhere") end
+ trait const QName(PackageNamespace(""), "MOUSE_MOVE_SOMEWHERE") slotid 5 type QName(PackageNamespace(""), "String") value Utf8("mouseMoveSomewhere") end
+ trait const QName(PackageNamespace(""), "MOUSE_UP_SOMEWHERE") slotid 6 type QName(PackageNamespace(""), "String") value Utf8("mouseUpSomewhere") end
+ trait const QName(PackageNamespace(""), "MOUSE_WHEEL_SOMEWHERE") slotid 7 type QName(PackageNamespace(""), "String") value Utf8("mouseWheelSomewhere") end
+ trait method QName(PackageNamespace(""), "marshal") flag FINAL dispid 3
+  method
+   refid "mx.events:SandboxMouseEvent/class/marshal"
+   param QName(PackageNamespace("flash.events"), "Event")
+   returns QName(PackageNamespace("mx.events"), "SandboxMouseEvent")
+   body
+    maxstack 8
+    localcount 3
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal1
+     coerce              QName(PackageNamespace(""), "Object")
+     setlocal2
+
+     getlocal0
+     getlocal2
+     getproperty         Multiname("type", [PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#0"), PackageNamespace(""), PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#1"), PackageNamespace("mx.events"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:SandboxMouseEvent"), StaticProtectedNs("mx.events:SandboxMouseEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+     getlocal2
+     getproperty         Multiname("bubbles", [PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#0"), PackageNamespace(""), PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#1"), PackageNamespace("mx.events"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:SandboxMouseEvent"), StaticProtectedNs("mx.events:SandboxMouseEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+     getlocal2
+     getproperty         Multiname("cancelable", [PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#0"), PackageNamespace(""), PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#1"), PackageNamespace("mx.events"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:SandboxMouseEvent"), StaticProtectedNs("mx.events:SandboxMouseEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+     getlocal2
+     getproperty         Multiname("ctrlKey", [PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#0"), PackageNamespace(""), PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#1"), PackageNamespace("mx.events"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:SandboxMouseEvent"), StaticProtectedNs("mx.events:SandboxMouseEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+     getlocal2
+     getproperty         Multiname("altKey", [PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#0"), PackageNamespace(""), PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#1"), PackageNamespace("mx.events"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:SandboxMouseEvent"), StaticProtectedNs("mx.events:SandboxMouseEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+     getlocal2
+     getproperty         Multiname("shiftKey", [PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#0"), PackageNamespace(""), PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#1"), PackageNamespace("mx.events"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:SandboxMouseEvent"), StaticProtectedNs("mx.events:SandboxMouseEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+     getlocal2
+     getproperty         Multiname("buttonDown", [PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#0"), PackageNamespace(""), PrivateNamespace(null, "mx.events:SandboxMouseEvent/class/marshal#1"), PackageNamespace("mx.events"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:SandboxMouseEvent"), StaticProtectedNs("mx.events:SandboxMouseEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+     construct           7
+     returnvalue
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

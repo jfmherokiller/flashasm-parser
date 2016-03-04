@@ -1,0 +1,46 @@
+class
+ refid "mx.core:IInvalidating"
+ instance QName(PackageNamespace("mx.core"), "IInvalidating")
+  flag SEALED
+  flag INTERFACE
+  iinit
+   refid "mx.core:IInvalidating/instance/init"
+  end ; method
+  trait method QName(Namespace("mx.core:IInvalidating"), "invalidateProperties")
+   method
+    refid "mx.core:IInvalidating/instance/mx.core:IInvalidating:invalidateProperties"
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IInvalidating"), "invalidateSize")
+   method
+    refid "mx.core:IInvalidating/instance/mx.core:IInvalidating:invalidateSize"
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IInvalidating"), "invalidateDisplayList")
+   method
+    refid "mx.core:IInvalidating/instance/mx.core:IInvalidating:invalidateDisplayList"
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IInvalidating"), "validateNow")
+   method
+    refid "mx.core:IInvalidating/instance/mx.core:IInvalidating:validateNow"
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.core:IInvalidating/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 3
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

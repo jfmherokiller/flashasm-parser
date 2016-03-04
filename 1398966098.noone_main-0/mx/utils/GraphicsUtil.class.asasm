@@ -1,0 +1,794 @@
+class
+ refid "mx.utils:GraphicsUtil"
+ instance QName(PackageNamespace("mx.utils"), "GraphicsUtil")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("mx.utils:GraphicsUtil")
+  iinit
+   refid "mx.utils:GraphicsUtil/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; instance
+ cinit
+  refid "mx.utils:GraphicsUtil/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+    pushstring          "4.0.0.14159"
+    initproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("4.0.0.14159") end
+ trait method QName(PackageNamespace(""), "drawRoundRectComplex") flag FINAL dispid 3
+  method
+   refid "mx.utils:GraphicsUtil/class/drawRoundRectComplex"
+   param QName(PackageNamespace("flash.display"), "Graphics")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 6
+    localcount 15
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal2
+     getlocal            4
+     add
+     convert_d
+     setlocal            10
+
+     getlocal3
+     getlocal            5
+     add
+     convert_d
+     setlocal            11
+
+     getlocal            4
+     getlocal            5
+     lessthan
+     iffalse             L21
+
+     getlocal            4
+     pushbyte            2
+     multiply
+     convert_d
+     jump                L25
+
+L21:
+     getlocal            5
+     pushbyte            2
+     multiply
+     convert_d
+L25:
+     convert_d
+     setlocal            12
+
+     getlocal            6
+     getlocal            12
+     lessthan
+     iffalse             L34
+
+     getlocal            6
+     convert_d
+     jump                L36
+
+L34:
+     getlocal            12
+     convert_d
+L36:
+     convert_d
+     setlocal            6
+
+     getlocal            7
+     getlocal            12
+     lessthan
+     iffalse             L45
+
+     getlocal            7
+     convert_d
+     jump                L47
+
+L45:
+     getlocal            12
+     convert_d
+L47:
+     convert_d
+     setlocal            7
+
+     getlocal            8
+     getlocal            12
+     lessthan
+     iffalse             L56
+
+     getlocal            8
+     convert_d
+     jump                L58
+
+L56:
+     getlocal            12
+     convert_d
+L58:
+     convert_d
+     setlocal            8
+
+     getlocal            9
+     getlocal            12
+     lessthan
+     iffalse             L67
+
+     getlocal            9
+     convert_d
+     jump                L69
+
+L67:
+     getlocal            12
+     convert_d
+L69:
+     convert_d
+     dup
+     setlocal            9
+
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            13
+
+     getlocal            9
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            14
+
+     getlocal1
+     getlocal            10
+     getlocal            11
+     getlocal            9
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+     getlocal1
+     getlocal            10
+     getlocal            11
+     getlocal            14
+     subtract
+     getlocal            10
+     getlocal            13
+     subtract
+     getlocal            11
+     getlocal            13
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal            10
+     getlocal            14
+     subtract
+     getlocal            11
+     getlocal            10
+     getlocal            9
+     subtract
+     getlocal            11
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal            8
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            13
+
+     getlocal            8
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            14
+
+     getlocal1
+     getlocal2
+     getlocal            8
+     add
+     getlocal            11
+     callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+     getlocal1
+     getlocal2
+     getlocal            14
+     add
+     getlocal            11
+     getlocal2
+     getlocal            13
+     add
+     getlocal            11
+     getlocal            13
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal2
+     getlocal            11
+     getlocal            14
+     subtract
+     getlocal2
+     getlocal            11
+     getlocal            8
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal            6
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            13
+
+     getlocal            6
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            14
+
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            6
+     add
+     callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            14
+     add
+     getlocal2
+     getlocal            13
+     add
+     getlocal3
+     getlocal            13
+     add
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal2
+     getlocal            14
+     add
+     getlocal3
+     getlocal2
+     getlocal            6
+     add
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal            7
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            13
+
+     getlocal            7
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            14
+
+     getlocal1
+     getlocal            10
+     getlocal            7
+     subtract
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+     getlocal1
+     getlocal            10
+     getlocal            14
+     subtract
+     getlocal3
+     getlocal            10
+     getlocal            13
+     subtract
+     getlocal3
+     getlocal            13
+     add
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal            10
+     getlocal3
+     getlocal            14
+     add
+     getlocal            10
+     getlocal3
+     getlocal            7
+     add
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal            10
+     getlocal            11
+     getlocal            9
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+ trait method QName(PackageNamespace(""), "drawRoundRectComplex2") flag FINAL dispid 4
+  method
+   refid "mx.utils:GraphicsUtil/class/drawRoundRectComplex2"
+   param QName(PackageNamespace("flash.display"), "Graphics")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   param QName(PackageNamespace(""), "Number")
+   returns QName(PackageNamespace(""), "void")
+   body
+    maxstack 6
+    localcount 24
+    initscopedepth 3
+    maxscopedepth 4
+    code
+     getlocal0
+     pushscope
+
+     getlocal2
+     getlocal            4
+     add
+     convert_d
+     setlocal            16
+
+     getlocal3
+     getlocal            5
+     add
+     convert_d
+     setlocal            17
+
+     getlocal            4
+     pushbyte            2
+     divide
+     convert_d
+     setlocal            18
+
+     getlocal            5
+     pushbyte            2
+     divide
+     convert_d
+     setlocal            19
+
+     getlocal            7
+     pushbyte            0
+     ifne                L28
+
+     getlocal            6
+     convert_d
+     setlocal            7
+
+L28:
+     findpropstrict      QName(PackageNamespace(""), "isNaN")
+     getlocal            8
+     callproperty        QName(PackageNamespace(""), "isNaN"), 1
+     iffalse             L35
+
+     getlocal            6
+     convert_d
+     setlocal            8
+
+L35:
+     findpropstrict      QName(PackageNamespace(""), "isNaN")
+     getlocal            9
+     callproperty        QName(PackageNamespace(""), "isNaN"), 1
+     iffalse             L42
+
+     getlocal            8
+     convert_d
+     setlocal            9
+
+L42:
+     findpropstrict      QName(PackageNamespace(""), "isNaN")
+     getlocal            10
+     callproperty        QName(PackageNamespace(""), "isNaN"), 1
+     iffalse             L49
+
+     getlocal            6
+     convert_d
+     setlocal            10
+
+L49:
+     findpropstrict      QName(PackageNamespace(""), "isNaN")
+     getlocal            11
+     callproperty        QName(PackageNamespace(""), "isNaN"), 1
+     iffalse             L56
+
+     getlocal            10
+     convert_d
+     setlocal            11
+
+L56:
+     findpropstrict      QName(PackageNamespace(""), "isNaN")
+     getlocal            12
+     callproperty        QName(PackageNamespace(""), "isNaN"), 1
+     iffalse             L63
+
+     getlocal            6
+     convert_d
+     setlocal            12
+
+L63:
+     findpropstrict      QName(PackageNamespace(""), "isNaN")
+     getlocal            13
+     callproperty        QName(PackageNamespace(""), "isNaN"), 1
+     iffalse             L70
+
+     getlocal            12
+     convert_d
+     setlocal            13
+
+L70:
+     findpropstrict      QName(PackageNamespace(""), "isNaN")
+     getlocal            14
+     callproperty        QName(PackageNamespace(""), "isNaN"), 1
+     iffalse             L77
+
+     getlocal            6
+     convert_d
+     setlocal            14
+
+L77:
+     findpropstrict      QName(PackageNamespace(""), "isNaN")
+     getlocal            15
+     callproperty        QName(PackageNamespace(""), "isNaN"), 1
+     iffalse             L84
+
+     getlocal            14
+     convert_d
+     setlocal            15
+
+L84:
+     getlocal            8
+     getlocal            18
+     ifngt               L90
+
+     getlocal            18
+     convert_d
+     setlocal            8
+
+L90:
+     getlocal            9
+     getlocal            19
+     ifngt               L96
+
+     getlocal            19
+     convert_d
+     setlocal            9
+
+L96:
+     getlocal            10
+     getlocal            18
+     ifngt               L102
+
+     getlocal            18
+     convert_d
+     setlocal            10
+
+L102:
+     getlocal            11
+     getlocal            19
+     ifngt               L108
+
+     getlocal            19
+     convert_d
+     setlocal            11
+
+L108:
+     getlocal            12
+     getlocal            18
+     ifngt               L114
+
+     getlocal            18
+     convert_d
+     setlocal            12
+
+L114:
+     getlocal            13
+     getlocal            19
+     ifngt               L120
+
+     getlocal            19
+     convert_d
+     setlocal            13
+
+L120:
+     getlocal            14
+     getlocal            18
+     ifngt               L126
+
+     getlocal            18
+     convert_d
+     setlocal            14
+
+L126:
+     getlocal            15
+     getlocal            19
+     ifngt               L132
+
+     getlocal            19
+     convert_d
+     setlocal            15
+
+L132:
+     getlocal            14
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            20
+
+     getlocal            15
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            21
+
+     getlocal            14
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            22
+
+     getlocal            15
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            23
+
+     getlocal1
+     getlocal            16
+     getlocal            17
+     getlocal            15
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "moveTo"), 2
+
+     getlocal1
+     getlocal            16
+     getlocal            17
+     getlocal            23
+     subtract
+     getlocal            16
+     getlocal            20
+     subtract
+     getlocal            17
+     getlocal            21
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal            16
+     getlocal            22
+     subtract
+     getlocal            17
+     getlocal            16
+     getlocal            14
+     subtract
+     getlocal            17
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal            12
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            20
+
+     getlocal            13
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            21
+
+     getlocal            12
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            22
+
+     getlocal            13
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            23
+
+     getlocal1
+     getlocal2
+     getlocal            12
+     add
+     getlocal            17
+     callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+     getlocal1
+     getlocal2
+     getlocal            22
+     add
+     getlocal            17
+     getlocal2
+     getlocal            20
+     add
+     getlocal            17
+     getlocal            21
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal2
+     getlocal            17
+     getlocal            23
+     subtract
+     getlocal2
+     getlocal            17
+     getlocal            13
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal            8
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            20
+
+     getlocal            9
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            21
+
+     getlocal            8
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            22
+
+     getlocal            9
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            23
+
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            9
+     add
+     callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            23
+     add
+     getlocal2
+     getlocal            20
+     add
+     getlocal3
+     getlocal            21
+     add
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal2
+     getlocal            22
+     add
+     getlocal3
+     getlocal2
+     getlocal            8
+     add
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal            10
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            20
+
+     getlocal            11
+     pushdouble          0.292893218813453
+     multiply
+     convert_d
+     setlocal            21
+
+     getlocal            10
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            22
+
+     getlocal            11
+     pushdouble          0.585786437626905
+     multiply
+     convert_d
+     setlocal            23
+
+     getlocal1
+     getlocal            16
+     getlocal            10
+     subtract
+     getlocal3
+     callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+     getlocal1
+     getlocal            16
+     getlocal            22
+     subtract
+     getlocal3
+     getlocal            16
+     getlocal            20
+     subtract
+     getlocal3
+     getlocal            21
+     add
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal            16
+     getlocal3
+     getlocal            23
+     add
+     getlocal            16
+     getlocal3
+     getlocal            11
+     add
+     callpropvoid        QName(PackageNamespace(""), "curveTo"), 4
+
+     getlocal1
+     getlocal            16
+     getlocal            17
+     getlocal            15
+     subtract
+     callpropvoid        QName(PackageNamespace(""), "lineTo"), 2
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+ end ; trait
+end ; class

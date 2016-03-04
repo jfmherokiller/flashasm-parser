@@ -1,0 +1,33 @@
+script
+ sinit
+  refid "mx.events:DynamicEvent/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("DynamicEvent", [PackageNamespace("mx.events")])
+    getlex              QName(PackageNamespace(""), "Object")
+    pushscope
+
+    getlex              QName(PackageNamespace("flash.events"), "Event")
+    pushscope
+
+    getlex              QName(PackageNamespace("flash.events"), "Event")
+    newclass            "mx.events:DynamicEvent"
+    popscope
+    popscope
+    initproperty        QName(PackageNamespace("mx.events"), "DynamicEvent")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("mx.events"), "DynamicEvent")
+  #include "DynamicEvent.class.asasm"
+ end ; trait
+end ; script

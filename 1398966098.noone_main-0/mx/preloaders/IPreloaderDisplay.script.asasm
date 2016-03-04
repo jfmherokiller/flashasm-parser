@@ -1,0 +1,25 @@
+script
+ sinit
+  refid "mx.preloaders:IPreloaderDisplay/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 2
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("IPreloaderDisplay", [PackageNamespace("mx.preloaders")])
+    pushnull
+    newclass            "mx.preloaders:IPreloaderDisplay"
+    initproperty        QName(PackageNamespace("mx.preloaders"), "IPreloaderDisplay")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("mx.preloaders"), "IPreloaderDisplay")
+  #include "IPreloaderDisplay.class.asasm"
+ end ; trait
+end ; script

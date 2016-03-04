@@ -1,0 +1,148 @@
+class
+ refid "mx.events:RSLEvent"
+ instance QName(PackageNamespace("mx.events"), "RSLEvent")
+  extends QName(PackageNamespace("flash.events"), "ProgressEvent")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("mx.events:RSLEvent")
+  iinit
+   refid "mx.events:RSLEvent/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace(""), "int")
+   param QName(PackageNamespace("flash.net"), "URLRequest")
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   optional False()
+   optional False()
+   optional Integer(-1)
+   optional Integer(-1)
+   optional Integer(-1)
+   optional Integer(-1)
+   optional Null()
+   optional Null()
+   optional False()
+   body
+    maxstack 6
+    localcount 11
+    initscopedepth 6
+    maxscopedepth 7
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     getlocal            4
+     getlocal            5
+     constructsuper      5
+
+     getlocal0
+     getlocal            6
+     initproperty        QName(PackageNamespace(""), "rslIndex")
+
+     getlocal0
+     getlocal            7
+     initproperty        QName(PackageNamespace(""), "rslTotal")
+
+     getlocal0
+     getlocal            8
+     initproperty        QName(PackageNamespace(""), "url")
+
+     getlocal0
+     getlocal            9
+     initproperty        QName(PackageNamespace(""), "errorText")
+
+     getlocal0
+     getlocal            10
+     initproperty        QName(PackageNamespace(""), "isResourceModule")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PackageNamespace(""), "errorText") type QName(PackageNamespace(""), "String") end
+  trait slot QName(PackageNamespace(""), "isResourceModule") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PackageNamespace(""), "loaderInfo") type QName(PackageNamespace("flash.display"), "LoaderInfo") end
+  trait slot QName(PackageNamespace(""), "rslIndex") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "rslTotal") type QName(PackageNamespace(""), "int") end
+  trait slot QName(PackageNamespace(""), "url") type QName(PackageNamespace("flash.net"), "URLRequest") end
+  trait method QName(PackageNamespace(""), "clone") flag OVERRIDE
+   method
+    refid "mx.events:RSLEvent/instance/clone"
+    returns QName(PackageNamespace("flash.events"), "Event")
+    body
+     maxstack 11
+     localcount 1
+     initscopedepth 6
+     maxscopedepth 7
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace("mx.events"), "RSLEvent")
+      getlex              QName(PackageNamespace(""), "type")
+      getlex              QName(PackageNamespace(""), "bubbles")
+      getlex              QName(PackageNamespace(""), "cancelable")
+      getlex              QName(PackageNamespace(""), "bytesLoaded")
+      getlex              QName(PackageNamespace(""), "bytesTotal")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rslIndex")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "rslTotal")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "url")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "errorText")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "isResourceModule")
+      constructprop       QName(PackageNamespace("mx.events"), "RSLEvent"), 10
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.events:RSLEvent/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 5
+   maxscopedepth 6
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+    pushstring          "4.0.0.14159"
+    initproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+
+    findproperty        QName(PackageNamespace(""), "RSL_COMPLETE")
+    pushstring          "rslComplete"
+    initproperty        QName(PackageNamespace(""), "RSL_COMPLETE")
+
+    findproperty        QName(PackageNamespace(""), "RSL_ERROR")
+    pushstring          "rslError"
+    initproperty        QName(PackageNamespace(""), "RSL_ERROR")
+
+    findproperty        QName(PackageNamespace(""), "RSL_PROGRESS")
+    pushstring          "rslProgress"
+    initproperty        QName(PackageNamespace(""), "RSL_PROGRESS")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("4.0.0.14159") end
+ trait const QName(PackageNamespace(""), "RSL_COMPLETE") slotid 2 type QName(PackageNamespace(""), "String") value Utf8("rslComplete") end
+ trait const QName(PackageNamespace(""), "RSL_ERROR") slotid 3 type QName(PackageNamespace(""), "String") value Utf8("rslError") end
+ trait const QName(PackageNamespace(""), "RSL_PROGRESS") slotid 4 type QName(PackageNamespace(""), "String") value Utf8("rslProgress") end
+end ; class

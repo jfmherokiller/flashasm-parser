@@ -1,0 +1,25 @@
+script
+ sinit
+  refid "flashx.textLayout.compose:ISWFContext/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 2
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("ISWFContext", [PackageNamespace("flashx.textLayout.compose")])
+    pushnull
+    newclass            "flashx.textLayout.compose:ISWFContext"
+    initproperty        QName(PackageNamespace("flashx.textLayout.compose"), "ISWFContext")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("flashx.textLayout.compose"), "ISWFContext")
+  #include "ISWFContext.class.asasm"
+ end ; trait
+end ; script

@@ -1,0 +1,310 @@
+class
+ refid "mx.managers:SystemRawChildrenList"
+ instance QName(PackageNamespace("mx.managers"), "SystemRawChildrenList")
+  extends QName(PackageNamespace(""), "Object")
+  implements Multiname("IChildList", [PackageNamespace("mx.core")])
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("mx.managers:SystemRawChildrenList")
+  iinit
+   refid "mx.managers:SystemRawChildrenList/instance/init"
+   param QName(PackageNamespace("mx.managers"), "SystemManager")
+   body
+    maxstack 2
+    localcount 2
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     getlocal0
+     getlocal1
+     initproperty        QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner") type QName(PackageNamespace("mx.managers"), "SystemManager") end
+  trait getter QName(PackageNamespace(""), "numChildren")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/numChildren/getter"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "$numChildren")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getChildAt")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/getChildAt"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_getChildAt"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addChild")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/addChild"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_addChild"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "addChildAt")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/addChildAt"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      getlocal2
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_addChildAt"), 2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeChild")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/removeChild"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_removeChild"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "removeChildAt")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/removeChildAt"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_removeChildAt"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getChildByName")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/getChildByName"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace("flash.display"), "DisplayObject")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_getChildByName"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getChildIndex")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/getChildIndex"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_getChildIndex"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "setChildIndex")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/setChildIndex"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 3
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      getlocal2
+      callpropvoid        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_setChildIndex"), 2
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "getObjectsUnderPoint")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/getObjectsUnderPoint"
+    param QName(PackageNamespace("flash.geom"), "Point")
+    returns QName(PackageNamespace(""), "Array")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_getObjectsUnderPoint"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "contains")
+   method
+    refid "mx.managers:SystemRawChildrenList/instance/contains"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "Boolean")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.managers:SystemRawChildrenList/instance"), "owner")
+      getlocal1
+      callproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rawChildren_contains"), 1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.managers:SystemRawChildrenList/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+    pushstring          "4.0.0.14159"
+    initproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("4.0.0.14159") end
+end ; class

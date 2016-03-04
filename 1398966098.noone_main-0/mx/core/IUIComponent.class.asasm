@@ -1,0 +1,1680 @@
+class
+ refid "mx.graphics:RectangularDropShadow"
+ instance QName(PackageNamespace("mx.graphics"), "RectangularDropShadow")
+  extends QName(PackageNamespace(""), "Object")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("mx.graphics:RectangularDropShadow")
+  iinit
+   refid "mx.graphics:RectangularDropShadow/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 4
+    maxscopedepth 5
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow") type QName(PackageNamespace("flash.display"), "BitmapData") end
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed") type QName(PackageNamespace(""), "Boolean") value True() end
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_alpha") type QName(PackageNamespace(""), "Number") value Double(0.4) end
+  trait getter QName(PackageNamespace(""), "alpha")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/alpha/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_alpha")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "alpha")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/alpha/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_alpha")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_alpha")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_angle") type QName(PackageNamespace(""), "Number") value Double(45) end
+  trait getter QName(PackageNamespace(""), "angle")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/angle/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_angle")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "angle")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/angle/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_angle")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_angle")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_color") type QName(PackageNamespace(""), "int") value Integer(0) end
+  trait getter QName(PackageNamespace(""), "color")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/color/getter"
+    returns QName(PackageNamespace(""), "int")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_color")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "color")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/color/setter"
+    param QName(PackageNamespace(""), "int")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_color")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_color")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_distance") type QName(PackageNamespace(""), "Number") value Double(4) end
+  trait getter QName(PackageNamespace(""), "distance")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/distance/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_distance")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "distance")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/distance/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_distance")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_distance")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_tlRadius") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait getter QName(PackageNamespace(""), "tlRadius")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/tlRadius/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_tlRadius")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "tlRadius")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/tlRadius/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_tlRadius")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_tlRadius")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_trRadius") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait getter QName(PackageNamespace(""), "trRadius")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/trRadius/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_trRadius")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "trRadius")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/trRadius/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_trRadius")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_trRadius")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blRadius") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait getter QName(PackageNamespace(""), "blRadius")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/blRadius/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blRadius")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "blRadius")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/blRadius/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blRadius")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blRadius")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_brRadius") type QName(PackageNamespace(""), "Number") value Integer(0) end
+  trait getter QName(PackageNamespace(""), "brRadius")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/brRadius/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_brRadius")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "brRadius")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/brRadius/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_brRadius")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_brRadius")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blurX") type QName(PackageNamespace(""), "Number") value Integer(4) end
+  trait getter QName(PackageNamespace(""), "blurX")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/blurX/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blurX")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "blurX")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/blurX/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blurX")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blurX")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait slot QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blurY") type QName(PackageNamespace(""), "Number") value Integer(4) end
+  trait getter QName(PackageNamespace(""), "blurY")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/blurY/getter"
+    returns QName(PackageNamespace(""), "Number")
+    body
+     maxstack 1
+     localcount 1
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blurY")
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait setter QName(PackageNamespace(""), "blurY")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/blurY/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 2
+     localcount 2
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blurY")
+      getlocal1
+      ifeq                L12
+
+      getlocal0
+      getlocal1
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "_blurY")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L12:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "drawShadow")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/drawShadow"
+    param QName(PackageNamespace("flash.display"), "Graphics")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 6
+     localcount 23
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      pushnan
+      setlocal            15
+
+      pushnan
+      setlocal            16
+
+      pushnan
+      setlocal            17
+
+      pushnan
+      setlocal            18
+
+      pushnan
+      setlocal            19
+
+      pushnan
+      setlocal            20
+
+      pushnan
+      setlocal            21
+
+      pushnan
+      setlocal            22
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+      iffalse             L26
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "createShadowBitmaps"), 0
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "changed")
+
+L26:
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            4
+      callproperty        QName(PackageNamespace(""), "ceil"), 1
+      convert_d
+      setlocal            4
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "ceil"), 1
+      convert_d
+      setlocal            5
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+      iffalse             L44
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+      getproperty         QName(PackageNamespace(""), "width")
+      convert_i
+      jump                L45
+
+L44:
+      pushbyte            0
+L45:
+      convert_i
+      setlocal            6
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+      iffalse             L55
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+      getproperty         QName(PackageNamespace(""), "width")
+      convert_i
+      jump                L56
+
+L55:
+      pushbyte            0
+L56:
+      convert_i
+      setlocal            7
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+      iffalse             L66
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+      getproperty         QName(PackageNamespace(""), "height")
+      convert_i
+      jump                L67
+
+L66:
+      pushbyte            0
+L67:
+      convert_i
+      setlocal            8
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+      iffalse             L77
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+      getproperty         QName(PackageNamespace(""), "height")
+      convert_i
+      jump                L78
+
+L77:
+      pushbyte            0
+L78:
+      convert_i
+      setlocal            9
+
+      getlocal            6
+      getlocal            7
+      add
+      convert_i
+      setlocal            10
+
+      getlocal            8
+      getlocal            9
+      add
+      convert_i
+      setlocal            11
+
+      getlocal            5
+      getlocal            11
+      add
+      pushbyte            2
+      divide
+      convert_d
+      setlocal            12
+
+      getlocal            4
+      getlocal            10
+      add
+      pushbyte            2
+      divide
+      convert_d
+      setlocal            13
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+      constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "Matrix")
+      setlocal            14
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+      convert_b
+      dup
+      iftrue              L117
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+      convert_b
+L117:
+      iffalse             L163
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tlRadius")
+      getlocal            10
+      add
+      getlocal            13
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            15
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tlRadius")
+      getlocal            11
+      add
+      getlocal            12
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            16
+
+      getlocal            14
+      getlocal2
+      getlocal            6
+      subtract
+      setproperty         QName(PackageNamespace(""), "tx")
+
+      getlocal            14
+      getlocal3
+      getlocal            8
+      subtract
+      setproperty         QName(PackageNamespace(""), "ty")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            14
+      callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 2
+
+      getlocal1
+      getlocal2
+      getlocal            6
+      subtract
+      getlocal3
+      getlocal            8
+      subtract
+      getlocal            15
+      getlocal            16
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L163:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+      convert_b
+      dup
+      iftrue              L172
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+      convert_b
+L172:
+      iffalse             L228
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "trRadius")
+      getlocal            10
+      add
+      getlocal            13
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            17
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "trRadius")
+      getlocal            11
+      add
+      getlocal            12
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            18
+
+      getlocal            14
+      getlocal2
+      getlocal            4
+      add
+      getlocal            7
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      setproperty         QName(PackageNamespace(""), "tx")
+
+      getlocal            14
+      getlocal3
+      getlocal            8
+      subtract
+      setproperty         QName(PackageNamespace(""), "ty")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            14
+      callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 2
+
+      getlocal1
+      getlocal2
+      getlocal            4
+      add
+      getlocal            7
+      add
+      getlocal            17
+      subtract
+      getlocal3
+      getlocal            8
+      subtract
+      getlocal            17
+      getlocal            18
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L228:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+      convert_b
+      dup
+      iftrue              L237
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+      convert_b
+L237:
+      iffalse             L293
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "blRadius")
+      getlocal            10
+      add
+      getlocal            13
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            19
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "blRadius")
+      getlocal            11
+      add
+      getlocal            12
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            20
+
+      getlocal            14
+      getlocal2
+      getlocal            6
+      subtract
+      setproperty         QName(PackageNamespace(""), "tx")
+
+      getlocal            14
+      getlocal3
+      getlocal            5
+      add
+      getlocal            9
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      setproperty         QName(PackageNamespace(""), "ty")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            14
+      callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 2
+
+      getlocal1
+      getlocal2
+      getlocal            6
+      subtract
+      getlocal3
+      getlocal            5
+      add
+      getlocal            9
+      add
+      getlocal            20
+      subtract
+      getlocal            19
+      getlocal            20
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L293:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+      convert_b
+      dup
+      iftrue              L302
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+      convert_b
+L302:
+      iffalse             L368
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "brRadius")
+      getlocal            10
+      add
+      getlocal            13
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            21
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "brRadius")
+      getlocal            11
+      add
+      getlocal            12
+      callproperty        QName(PackageNamespace(""), "min"), 2
+      convert_d
+      setlocal            22
+
+      getlocal            14
+      getlocal2
+      getlocal            4
+      add
+      getlocal            7
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getproperty         QName(PackageNamespace(""), "width")
+      subtract
+      setproperty         QName(PackageNamespace(""), "tx")
+
+      getlocal            14
+      getlocal3
+      getlocal            5
+      add
+      getlocal            9
+      add
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getproperty         QName(PackageNamespace(""), "height")
+      subtract
+      setproperty         QName(PackageNamespace(""), "ty")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            14
+      callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 2
+
+      getlocal1
+      getlocal2
+      getlocal            4
+      add
+      getlocal            7
+      add
+      getlocal            21
+      subtract
+      getlocal3
+      getlocal            5
+      add
+      getlocal            9
+      add
+      getlocal            22
+      subtract
+      getlocal            21
+      getlocal            22
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L368:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+      iffalse             L406
+
+      getlocal            14
+      getlocal2
+      getlocal            6
+      subtract
+      setproperty         QName(PackageNamespace(""), "tx")
+
+      getlocal            14
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "ty")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+      getlocal            14
+      callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 2
+
+      getlocal1
+      getlocal2
+      getlocal            6
+      subtract
+      getlocal3
+      getlocal            8
+      subtract
+      getlocal            16
+      add
+      getlocal            6
+      getlocal            5
+      getlocal            8
+      add
+      getlocal            9
+      add
+      getlocal            16
+      subtract
+      getlocal            20
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L406:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+      iffalse             L444
+
+      getlocal            14
+      getlocal2
+      getlocal            4
+      add
+      setproperty         QName(PackageNamespace(""), "tx")
+
+      getlocal            14
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "ty")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+      getlocal            14
+      callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 2
+
+      getlocal1
+      getlocal2
+      getlocal            4
+      add
+      getlocal3
+      getlocal            8
+      subtract
+      getlocal            18
+      add
+      getlocal            7
+      getlocal            5
+      getlocal            8
+      add
+      getlocal            9
+      add
+      getlocal            18
+      subtract
+      getlocal            22
+      subtract
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L444:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+      iffalse             L482
+
+      getlocal            14
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "tx")
+
+      getlocal            14
+      getlocal3
+      getlocal            8
+      subtract
+      setproperty         QName(PackageNamespace(""), "ty")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+      getlocal            14
+      callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 2
+
+      getlocal1
+      getlocal2
+      getlocal            6
+      subtract
+      getlocal            15
+      add
+      getlocal3
+      getlocal            8
+      subtract
+      getlocal            4
+      getlocal            6
+      add
+      getlocal            7
+      add
+      getlocal            15
+      subtract
+      getlocal            17
+      subtract
+      getlocal            8
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L482:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+      iffalse             L520
+
+      getlocal            14
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "tx")
+
+      getlocal            14
+      getlocal3
+      getlocal            5
+      add
+      setproperty         QName(PackageNamespace(""), "ty")
+
+      getlocal1
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+      getlocal            14
+      callpropvoid        QName(PackageNamespace(""), "beginBitmapFill"), 2
+
+      getlocal1
+      getlocal2
+      getlocal            6
+      subtract
+      getlocal            19
+      add
+      getlocal3
+      getlocal            5
+      add
+      getlocal            4
+      getlocal            6
+      add
+      getlocal            7
+      add
+      getlocal            19
+      subtract
+      getlocal            21
+      subtract
+      getlocal            9
+      callpropvoid        QName(PackageNamespace(""), "drawRect"), 4
+
+      getlocal1
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+L520:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "createShadowBitmaps")
+   method
+    refid "mx.graphics:RectangularDropShadow/instance/mx.graphics:RectangularDropShadow/instance/createShadowBitmaps"
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 10
+     localcount 15
+     initscopedepth 4
+     maxscopedepth 5
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tlRadius")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "blRadius")
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      pushbyte            3
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "distance")
+      callproperty        QName(PackageNamespace(""), "abs"), 1
+      pushbyte            2
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "trRadius")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "brRadius")
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      add
+      convert_d
+      setlocal1
+
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tlRadius")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "trRadius")
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      pushbyte            3
+      getlex              QName(PackageNamespace(""), "Math")
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "distance")
+      callproperty        QName(PackageNamespace(""), "abs"), 1
+      pushbyte            2
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      multiply
+      add
+      getlex              QName(PackageNamespace(""), "Math")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "blRadius")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "brRadius")
+      callproperty        QName(PackageNamespace(""), "max"), 2
+      add
+      convert_d
+      setlocal2
+
+      getlocal1
+      pushbyte            0
+      lessthan
+      dup
+      iftrue              L61
+
+      pop
+      getlocal2
+      pushbyte            0
+      lessthan
+L61:
+      iffalse             L63
+
+      returnvoid
+
+L63:
+      findpropstrict      QName(PackageNamespace("mx.core"), "FlexShape")
+      constructprop       QName(PackageNamespace("mx.core"), "FlexShape"), 0
+      coerce              QName(PackageNamespace("flash.display"), "Shape")
+      setlocal3
+
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "graphics")
+      coerce              QName(PackageNamespace("flash.display"), "Graphics")
+      dup
+      setlocal            4
+
+      pushint             16777215
+      callpropvoid        QName(PackageNamespace(""), "beginFill"), 1
+
+      getlex              QName(PackageNamespace("mx.utils"), "GraphicsUtil")
+      getlocal            4
+      pushbyte            0
+      dup
+      getlocal1
+      getlocal2
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tlRadius")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "trRadius")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "blRadius")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "brRadius")
+      callpropvoid        QName(PackageNamespace(""), "drawRoundRectComplex"), 9
+
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "endFill"), 0
+
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal1
+      getlocal2
+      pushtrue
+      pushbyte            0
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 4
+      coerce              QName(PackageNamespace("flash.display"), "BitmapData")
+      dup
+      setlocal            5
+
+      getlocal3
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Matrix")
+      constructprop       QName(PackageNamespace("flash.geom"), "Matrix"), 0
+      callpropvoid        QName(PackageNamespace(""), "draw"), 2
+
+      findpropstrict      QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "distance")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "angle")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "color")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "alpha")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "blurX")
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "blurY")
+      constructprop       QName(PackageNamespace("flash.filters"), "DropShadowFilter"), 6
+      coerce              QName(PackageNamespace("flash.filters"), "DropShadowFilter")
+      dup
+      setlocal            6
+
+      pushtrue
+      setproperty         QName(PackageNamespace(""), "knockout")
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      pushbyte            0
+      dup
+      getlocal1
+      getlocal2
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 4
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal            7
+
+      getlocal            5
+      getlocal            7
+      getlocal            6
+      callproperty        QName(PackageNamespace(""), "generateFilterRect"), 2
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal            8
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "left")
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "left")
+      subtract
+      convert_d
+      setlocal            9
+
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "right")
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "right")
+      subtract
+      convert_d
+      setlocal            10
+
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "top")
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "top")
+      subtract
+      convert_d
+      setlocal            11
+
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "bottom")
+      getlocal            7
+      getproperty         QName(PackageNamespace(""), "bottom")
+      subtract
+      convert_d
+      setlocal            12
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal            8
+      getproperty         QName(PackageNamespace(""), "height")
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 2
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            5
+      getlocal            7
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      getlocal            9
+      getlocal            11
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      getlocal            6
+      callpropvoid        QName(PackageNamespace(""), "applyFilter"), 4
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Point")
+      pushbyte            0
+      dup
+      constructprop       QName(PackageNamespace("flash.geom"), "Point"), 2
+      coerce              QName(PackageNamespace("flash.geom"), "Point")
+      setlocal            13
+
+      findpropstrict      QName(PackageNamespace("flash.geom"), "Rectangle")
+      constructprop       QName(PackageNamespace("flash.geom"), "Rectangle"), 0
+      coerce              QName(PackageNamespace("flash.geom"), "Rectangle")
+      setlocal            14
+
+      getlocal            9
+      pushbyte            0
+      ifngt               L227
+
+      getlocal            14
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            14
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tlRadius")
+      getlocal            11
+      add
+      getlocal            12
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal            14
+      getlocal            9
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal            14
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal            9
+      pushbyte            1
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 2
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            14
+      getlocal            13
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      jump                L230
+
+L227:
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "leftShadow")
+
+L230:
+      getlocal            10
+      pushbyte            0
+      ifngt               L268
+
+      getlocal            14
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getproperty         QName(PackageNamespace(""), "width")
+      getlocal            10
+      subtract
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            14
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "trRadius")
+      getlocal            11
+      add
+      getlocal            12
+      add
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal            14
+      getlocal            10
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal            14
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      getlocal            10
+      pushbyte            1
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 2
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            14
+      getlocal            13
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      jump                L271
+
+L268:
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "rightShadow")
+
+L271:
+      getlocal            11
+      pushbyte            0
+      ifngt               L305
+
+      getlocal            14
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "tlRadius")
+      getlocal            9
+      add
+      getlocal            10
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            14
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal            14
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal            14
+      getlocal            11
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      pushbyte            1
+      getlocal            11
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 2
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            14
+      getlocal            13
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      jump                L308
+
+L305:
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "topShadow")
+
+L308:
+      getlocal            12
+      pushbyte            0
+      ifngt               L346
+
+      getlocal            14
+      getlocal0
+      getproperty         QName(PackageNamespace(""), "blRadius")
+      getlocal            9
+      add
+      getlocal            10
+      add
+      setproperty         QName(PackageNamespace(""), "x")
+
+      getlocal            14
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getproperty         QName(PackageNamespace(""), "height")
+      getlocal            12
+      subtract
+      setproperty         QName(PackageNamespace(""), "y")
+
+      getlocal            14
+      pushbyte            1
+      setproperty         QName(PackageNamespace(""), "width")
+
+      getlocal            14
+      getlocal            12
+      setproperty         QName(PackageNamespace(""), "height")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.display"), "BitmapData")
+      pushbyte            1
+      getlocal            12
+      constructprop       QName(PackageNamespace("flash.display"), "BitmapData"), 2
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "shadow")
+      getlocal            14
+      getlocal            13
+      callpropvoid        QName(PackageNamespace(""), "copyPixels"), 3
+
+      jump                L349
+
+L346:
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "mx.graphics:RectangularDropShadow/instance"), "bottomShadow")
+
+L349:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.graphics:RectangularDropShadow/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 4
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+    pushstring          "4.0.0.14159"
+    initproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("4.0.0.14159") end
+end ; class

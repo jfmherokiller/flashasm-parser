@@ -1,0 +1,58 @@
+class
+ refid "mx.managers:ISystemManagerChildManager"
+ instance QName(PackageNamespace("mx.managers"), "ISystemManagerChildManager")
+  flag SEALED
+  flag INTERFACE
+  iinit
+   refid "mx.managers:ISystemManagerChildManager/instance/init"
+  end ; method
+  trait method QName(Namespace("mx.managers:ISystemManagerChildManager"), "addingChild")
+   method
+    refid "mx.managers:ISystemManagerChildManager/instance/mx.managers:ISystemManagerChildManager:addingChild"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManagerChildManager"), "childAdded")
+   method
+    refid "mx.managers:ISystemManagerChildManager/instance/mx.managers:ISystemManagerChildManager:childAdded"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManagerChildManager"), "childRemoved")
+   method
+    refid "mx.managers:ISystemManagerChildManager/instance/mx.managers:ISystemManagerChildManager:childRemoved"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManagerChildManager"), "removingChild")
+   method
+    refid "mx.managers:ISystemManagerChildManager/instance/mx.managers:ISystemManagerChildManager:removingChild"
+    param QName(PackageNamespace("flash.display"), "DisplayObject")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.managers:ISystemManagerChildManager"), "initializeTopLevelWindow")
+   method
+    refid "mx.managers:ISystemManagerChildManager/instance/mx.managers:ISystemManagerChildManager:initializeTopLevelWindow"
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.managers:ISystemManagerChildManager/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 3
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

@@ -1,0 +1,81 @@
+class
+ refid "mx.core:IFlexModuleFactory"
+ instance QName(PackageNamespace("mx.core"), "IFlexModuleFactory")
+  flag SEALED
+  flag INTERFACE
+  iinit
+   refid "mx.core:IFlexModuleFactory/instance/init"
+  end ; method
+  trait getter QName(Namespace("mx.core:IFlexModuleFactory"), "preloadedRSLs")
+   method
+    refid "mx.core:IFlexModuleFactory/instance/mx.core:IFlexModuleFactory:preloadedRSLs/getter"
+    returns QName(PackageNamespace("flash.utils"), "Dictionary")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IFlexModuleFactory"), "allowDomain")
+   method
+    refid "mx.core:IFlexModuleFactory/instance/mx.core:IFlexModuleFactory:allowDomain"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_REST
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IFlexModuleFactory"), "allowInsecureDomain")
+   method
+    refid "mx.core:IFlexModuleFactory/instance/mx.core:IFlexModuleFactory:allowInsecureDomain"
+    returns QName(PackageNamespace(""), "void")
+    flag NEED_REST
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IFlexModuleFactory"), "callInContext")
+   method
+    refid "mx.core:IFlexModuleFactory/instance/mx.core:IFlexModuleFactory:callInContext"
+    param QName(PackageNamespace(""), "Function")
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Boolean")
+    flag HAS_OPTIONAL
+    optional True()
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IFlexModuleFactory"), "create")
+   method
+    refid "mx.core:IFlexModuleFactory/instance/mx.core:IFlexModuleFactory:create"
+    returns QName(PackageNamespace(""), "Object")
+    flag NEED_REST
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IFlexModuleFactory"), "getImplementation")
+   method
+    refid "mx.core:IFlexModuleFactory/instance/mx.core:IFlexModuleFactory:getImplementation"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "Object")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IFlexModuleFactory"), "info")
+   method
+    refid "mx.core:IFlexModuleFactory/instance/mx.core:IFlexModuleFactory:info"
+    returns QName(PackageNamespace(""), "Object")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.core:IFlexModuleFactory"), "registerImplementation")
+   method
+    refid "mx.core:IFlexModuleFactory/instance/mx.core:IFlexModuleFactory:registerImplementation"
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.core:IFlexModuleFactory/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 3
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

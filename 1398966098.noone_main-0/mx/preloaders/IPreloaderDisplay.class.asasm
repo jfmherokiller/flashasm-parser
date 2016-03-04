@@ -1,0 +1,114 @@
+class
+ refid "mx.preloaders:IPreloaderDisplay"
+ instance QName(PackageNamespace("mx.preloaders"), "IPreloaderDisplay")
+  implements Multiname("IEventDispatcher", [PackageNamespace("flash.events")])
+  flag SEALED
+  flag INTERFACE
+  iinit
+   refid "mx.preloaders:IPreloaderDisplay/instance/init"
+  end ; method
+  trait getter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundAlpha")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:backgroundAlpha/getter"
+    returns QName(PackageNamespace(""), "Number")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundAlpha")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:backgroundAlpha/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundColor")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:backgroundColor/getter"
+    returns QName(PackageNamespace(""), "uint")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundColor")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:backgroundColor/setter"
+    param QName(PackageNamespace(""), "uint")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundImage")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:backgroundImage/getter"
+    returns QName(PackageNamespace(""), "Object")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundImage")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:backgroundImage/setter"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundSize")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:backgroundSize/getter"
+    returns QName(PackageNamespace(""), "String")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundSize")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:backgroundSize/setter"
+    param QName(PackageNamespace(""), "String")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "preloader")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:preloader/setter"
+    param QName(PackageNamespace("flash.display"), "Sprite")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "stageHeight")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:stageHeight/getter"
+    returns QName(PackageNamespace(""), "Number")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "stageHeight")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:stageHeight/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "stageWidth")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:stageWidth/getter"
+    returns QName(PackageNamespace(""), "Number")
+   end ; method
+  end ; trait
+  trait setter QName(Namespace("mx.preloaders:IPreloaderDisplay"), "stageWidth")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:stageWidth/setter"
+    param QName(PackageNamespace(""), "Number")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait method QName(Namespace("mx.preloaders:IPreloaderDisplay"), "initialize")
+   method
+    refid "mx.preloaders:IPreloaderDisplay/instance/mx.preloaders:IPreloaderDisplay:initialize"
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.preloaders:IPreloaderDisplay/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 4
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

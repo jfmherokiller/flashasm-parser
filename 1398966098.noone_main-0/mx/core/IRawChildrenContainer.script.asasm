@@ -1,0 +1,25 @@
+script
+ sinit
+  refid "mx.core:IRawChildrenContainer/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 2
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("IRawChildrenContainer", [PackageNamespace("mx.core")])
+    pushnull
+    newclass            "mx.core:IRawChildrenContainer"
+    initproperty        QName(PackageNamespace("mx.core"), "IRawChildrenContainer")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("mx.core"), "IRawChildrenContainer")
+  #include "IRawChildrenContainer.class.asasm"
+ end ; trait
+end ; script

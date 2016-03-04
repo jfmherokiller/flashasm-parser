@@ -1,0 +1,35 @@
+class
+ refid "mx.core:IFlexModule"
+ instance QName(PackageNamespace("mx.core"), "IFlexModule")
+  flag SEALED
+  flag INTERFACE
+  iinit
+   refid "mx.core:IFlexModule/instance/init"
+  end ; method
+  trait setter QName(Namespace("mx.core:IFlexModule"), "moduleFactory")
+   method
+    refid "mx.core:IFlexModule/instance/mx.core:IFlexModule:moduleFactory/setter"
+    param QName(PackageNamespace("mx.core"), "IFlexModuleFactory")
+    returns QName(PackageNamespace(""), "void")
+   end ; method
+  end ; trait
+  trait getter QName(Namespace("mx.core:IFlexModule"), "moduleFactory")
+   method
+    refid "mx.core:IFlexModule/instance/mx.core:IFlexModule:moduleFactory/getter"
+    returns QName(PackageNamespace("mx.core"), "IFlexModuleFactory")
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.core:IFlexModule/class/init"
+  body
+   maxstack 0
+   localcount 1
+   initscopedepth 3
+   maxscopedepth 3
+   code
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+end ; class

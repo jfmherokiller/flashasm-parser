@@ -1,0 +1,116 @@
+class
+ refid "mx.events:DynamicEvent"
+ instance QName(PackageNamespace("mx.events"), "DynamicEvent")
+  extends QName(PackageNamespace("flash.events"), "Event")
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("mx.events:DynamicEvent")
+  iinit
+   refid "mx.events:DynamicEvent/instance/init"
+   param QName(PackageNamespace(""), "String")
+   param QName(PackageNamespace(""), "Boolean")
+   param QName(PackageNamespace(""), "Boolean")
+   flag HAS_OPTIONAL
+   optional False()
+   optional False()
+   body
+    maxstack 4
+    localcount 4
+    initscopedepth 5
+    maxscopedepth 6
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     getlocal1
+     getlocal2
+     getlocal3
+     constructsuper      3
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait method QName(PackageNamespace(""), "clone") flag OVERRIDE
+   method
+    refid "mx.events:DynamicEvent/instance/clone"
+    returns QName(PackageNamespace("flash.events"), "Event")
+    body
+     maxstack 4
+     localcount 5
+     initscopedepth 5
+     maxscopedepth 6
+     code
+      getlocal0
+      pushscope
+
+      pushnull
+      coerce_s
+      setlocal2
+
+      findpropstrict      QName(PackageNamespace("mx.events"), "DynamicEvent")
+      getlex              QName(PackageNamespace(""), "type")
+      getlex              QName(PackageNamespace(""), "bubbles")
+      getlex              QName(PackageNamespace(""), "cancelable")
+      constructprop       QName(PackageNamespace("mx.events"), "DynamicEvent"), 3
+      coerce              QName(PackageNamespace("mx.events"), "DynamicEvent")
+      setlocal1
+
+      pushbyte            0
+      setlocal3
+
+      getlocal0
+      coerce_a
+      setlocal            4
+
+      jump                L30
+
+L18:
+      label
+      getlocal            4
+      getlocal3
+      nextname
+      coerce_s
+      setlocal2
+
+      getlocal1
+      getlocal2
+      getlocal0
+      getlocal2
+      getproperty         MultinameL([PrivateNamespace(null, "mx.events:DynamicEvent/instance/clone#0"), PackageNamespace(""), PackageNamespace("mx.events"), PrivateNamespace(null, "mx.events:DynamicEvent/instance/clone#1"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:DynamicEvent"), StaticProtectedNs("mx.events:DynamicEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+      setproperty         MultinameL([PrivateNamespace(null, "mx.events:DynamicEvent/instance/clone#0"), PackageNamespace(""), PackageNamespace("mx.events"), PrivateNamespace(null, "mx.events:DynamicEvent/instance/clone#1"), PackageInternalNs("mx.events"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.events:DynamicEvent"), StaticProtectedNs("mx.events:DynamicEvent"), StaticProtectedNs("flash.events:Event"), StaticProtectedNs("Object")])
+
+L30:
+      hasnext2            4, 3
+      iftrue              L18
+
+      kill                4
+      kill                3
+      getlocal1
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.events:DynamicEvent/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 4
+   maxscopedepth 5
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+    pushstring          "4.0.0.14159"
+    initproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("4.0.0.14159") end
+end ; class

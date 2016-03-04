@@ -1,0 +1,25 @@
+script
+ sinit
+  refid "mx.managers:ISystemManager/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 2
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("ISystemManager", [PackageNamespace("mx.managers")])
+    pushnull
+    newclass            "mx.managers:ISystemManager"
+    initproperty        QName(PackageNamespace("mx.managers"), "ISystemManager")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("mx.managers"), "ISystemManager")
+  #include "ISystemManager.class.asasm"
+ end ; trait
+end ; script

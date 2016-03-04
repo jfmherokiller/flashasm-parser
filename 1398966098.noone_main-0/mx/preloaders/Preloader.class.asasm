@@ -1,0 +1,1291 @@
+class
+ refid "mx.preloaders:Preloader"
+ instance QName(PackageNamespace("mx.preloaders"), "Preloader")
+  extends QName(PackageNamespace("flash.display"), "Sprite")
+  flag SEALED
+  flag PROTECTEDNS
+  protectedns ProtectedNamespace("mx.preloaders:Preloader")
+  iinit
+   refid "mx.preloaders:Preloader/instance/init"
+   body
+    maxstack 1
+    localcount 1
+    initscopedepth 9
+    maxscopedepth 10
+    code
+     getlocal0
+     pushscope
+
+     getlocal0
+     constructsuper      0
+
+     returnvoid
+    end ; code
+   end ; body
+  end ; method
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass") type QName(PackageNamespace("mx.preloaders"), "IPreloaderDisplay") value Null() end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timer") type QName(PackageNamespace("flash.utils"), "Timer") end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "showDisplay") type QName(PackageNamespace(""), "Boolean") end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader") type QName(PackageNamespace("mx.core"), "RSLListLoader") end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader") type QName(PackageNamespace("mx.core"), "RSLListLoader") end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslDone") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "loadingRSLs") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "waitingToLoadResourceModules") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "sentDocFrameReady") type QName(PackageNamespace(""), "Boolean") value False() end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "app") type QName(PackageNamespace("flash.events"), "IEventDispatcher") value Null() end
+  trait slot QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "applicationDomain") type QName(PackageNamespace("flash.system"), "ApplicationDomain") value Null() end
+  trait method QName(PackageNamespace(""), "initialize")
+   method
+    refid "mx.preloaders:Preloader/instance/initialize"
+    param QName(PackageNamespace(""), "Boolean")
+    param QName(PackageNamespace(""), "Class")
+    param QName(PackageNamespace(""), "uint")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Object")
+    param QName(PackageNamespace(""), "String")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Number")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace(""), "Array")
+    param QName(PackageNamespace("flash.system"), "ApplicationDomain")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    optional Null()
+    optional Null()
+    optional Null()
+    optional Null()
+    body
+     maxstack 6
+     localcount 19
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      pushbyte            0
+      setlocal            14
+
+      pushbyte            0
+      setlocal            15
+
+      pushnull
+      coerce              QName(PackageNamespace("mx.core"), "RSLItem")
+      setlocal            17
+
+      pushnull
+      coerce              QName(PackageNamespace("mx.core"), "ResourceModuleRSLItem")
+      setlocal            18
+
+      getlocal            9
+      pushnull
+      equals
+      not
+      dup
+      iftrue              L23
+
+      pop
+      getlocal            10
+      pushnull
+      equals
+      not
+L23:
+      dup
+      iffalse             L30
+
+      pop
+      getlocal            11
+      pushnull
+      equals
+      not
+L30:
+      iffalse             L35
+
+      findpropstrict      QName(PackageNamespace(""), "Error")
+      pushstring          "RSLs may only be specified by using libs and sizes or rslList, not both."
+      constructprop       QName(PackageNamespace(""), "Error"), 1
+      throw
+
+L35:
+      getlocal0
+      getlocal            13
+      setproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "applicationDomain")
+
+      getlex              QName(PackageNamespace(""), "root")
+      getproperty         QName(PackageNamespace(""), "loaderInfo")
+      getlex              QName(PackageNamespace("flash.events"), "IOErrorEvent")
+      getproperty         QName(PackageNamespace(""), "IO_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "ioErrorHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal            9
+      convert_b
+      dup
+      iffalse             L54
+
+      pop
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+L54:
+      iffalse             L83
+
+      getlocal            11
+      pushnull
+      ifne                L61
+
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            11
+
+L61:
+      getlocal            9
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            14
+
+      pushbyte            0
+      setlocal            15
+
+      jump                L80
+
+L68:
+      label
+      findpropstrict      QName(PackageNamespace("mx.core"), "RSLItem")
+      getlocal            9
+      getlocal            15
+      getproperty         MultinameL([PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), Namespace("http://www.adobe.com/2006/flex/mx/internal"), PackageNamespace(""), PrivateNamespace(null, "mx.preloaders:Preloader/instance#1"), PackageNamespace("mx.preloaders"), PackageInternalNs("mx.preloaders"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.preloaders:Preloader"), StaticProtectedNs("mx.preloaders:Preloader"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      constructprop       QName(PackageNamespace("mx.core"), "RSLItem"), 1
+      coerce              QName(PackageNamespace("mx.core"), "RSLItem")
+      setlocal            17
+
+      getlocal            11
+      getlocal            17
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          15
+L80:
+      getlocal            15
+      getlocal            14
+      iflt                L68
+
+L83:
+      newarray            0
+      coerce              QName(PackageNamespace(""), "Array")
+      setlocal            16
+
+      getlocal            12
+      convert_b
+      dup
+      iffalse             L95
+
+      pop
+      getlocal            12
+      getproperty         QName(PackageNamespace(""), "length")
+      pushbyte            0
+      greaterthan
+L95:
+      iffalse             L119
+
+      getlocal            12
+      getproperty         QName(PackageNamespace(""), "length")
+      convert_i
+      setlocal            14
+
+      pushbyte            0
+      setlocal            15
+
+      jump                L116
+
+L103:
+      label
+      findpropstrict      QName(PackageNamespace("mx.core"), "ResourceModuleRSLItem")
+      getlocal            12
+      getlocal            15
+      getproperty         MultinameL([PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), Namespace("http://www.adobe.com/2006/flex/mx/internal"), PackageNamespace(""), PrivateNamespace(null, "mx.preloaders:Preloader/instance#1"), PackageNamespace("mx.preloaders"), PackageInternalNs("mx.preloaders"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.preloaders:Preloader"), StaticProtectedNs("mx.preloaders:Preloader"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      getlocal            13
+      constructprop       QName(PackageNamespace("mx.core"), "ResourceModuleRSLItem"), 2
+      coerce              QName(PackageNamespace("mx.core"), "ResourceModuleRSLItem")
+      setlocal            18
+
+      getlocal            16
+      getlocal            18
+      callpropvoid        QName(Namespace("http://adobe.com/AS3/2006/builtin"), "push"), 1
+
+      inclocal_i          15
+L116:
+      getlocal            15
+      getlocal            14
+      iflt                L103
+
+L119:
+      getlocal0
+      findpropstrict      QName(PackageNamespace("mx.core"), "RSLListLoader")
+      getlocal            11
+      constructprop       QName(PackageNamespace("mx.core"), "RSLListLoader"), 1
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+
+      getlocal            16
+      getproperty         QName(PackageNamespace(""), "length")
+      iffalse             L132
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("mx.core"), "RSLListLoader")
+      getlocal            16
+      constructprop       QName(PackageNamespace("mx.core"), "RSLListLoader"), 1
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+
+L132:
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "showDisplay")
+
+      getlocal0
+      findpropstrict      QName(PackageNamespace("flash.utils"), "Timer")
+      pushbyte            10
+      constructprop       QName(PackageNamespace("flash.utils"), "Timer"), 1
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timer")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timerHandler")
+      callpropvoid        QName(PackageNamespace(""), "addEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "start"), 0
+
+      getlocal1
+      iffalse             L200
+
+      getlocal0
+      getlocal2
+      construct           0
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClassCompleteHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 2
+
+      findpropstrict      QName(PackageNamespace(""), "addChild")
+      findpropstrict      QName(PackageNamespace("flash.display"), "DisplayObject")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      callproperty        QName(PackageNamespace("flash.display"), "DisplayObject"), 1
+      callpropvoid        QName(PackageNamespace(""), "addChild"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlocal3
+      setproperty         QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundColor")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlocal            4
+      setproperty         QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundAlpha")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlocal            5
+      setproperty         QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundImage")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlocal            6
+      setproperty         QName(Namespace("mx.preloaders:IPreloaderDisplay"), "backgroundSize")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlocal            7
+      setproperty         QName(Namespace("mx.preloaders:IPreloaderDisplay"), "stageWidth")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlocal            8
+      setproperty         QName(Namespace("mx.preloaders:IPreloaderDisplay"), "stageHeight")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      callpropvoid        QName(Namespace("mx.preloaders:IPreloaderDisplay"), "initialize"), 0
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlocal0
+      setproperty         QName(Namespace("mx.preloaders:IPreloaderDisplay"), "preloader")
+
+L200:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      callproperty        QName(PackageNamespace(""), "getItemCount"), 0
+      pushbyte            0
+      ifngt               L222
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslProgressHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslCompleteHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      callpropvoid        QName(PackageNamespace(""), "load"), 5
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "loadingRSLs")
+
+      jump                L266
+
+L222:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      convert_b
+      dup
+      iffalse             L233
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      callproperty        QName(PackageNamespace(""), "getItemCount"), 0
+      pushbyte            0
+      greaterthan
+L233:
+      iffalse             L263
+
+      getlocal            13
+      pushstring          "mx.resources::ResourceManager"
+      callproperty        QName(PackageNamespace(""), "hasDefinition"), 1
+      iffalse             L256
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslProgressHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslCompleteHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      callpropvoid        QName(PackageNamespace(""), "load"), 5
+
+      jump                L262
+
+L256:
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "waitingToLoadResourceModules")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslDone")
+
+L262:
+      jump                L266
+
+L263:
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslDone")
+
+L266:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PackageNamespace(""), "registerApplication")
+   method
+    refid "mx.preloaders:Preloader/instance/registerApplication"
+    param QName(PackageNamespace("flash.events"), "IEventDispatcher")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal1
+      pushstring          "validatePropertiesComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appProgressHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 2
+
+      getlocal1
+      pushstring          "validateSizeComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appProgressHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 2
+
+      getlocal1
+      pushstring          "validateDisplayListComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appProgressHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 2
+
+      getlocal1
+      getlex              QName(PackageNamespace("mx.events"), "FlexEvent")
+      getproperty         QName(PackageNamespace(""), "CREATION_COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appCreationCompleteHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "addEventListener"), 2
+
+      getlocal0
+      getlocal1
+      setproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "app")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "getByteValues")
+   method
+    refid "mx.preloaders:Preloader/instance/mx.preloaders:Preloader/instance/getByteValues"
+    returns QName(PackageNamespace(""), "Object")
+    body
+     maxstack 4
+     localcount 6
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "root")
+      getproperty         QName(PackageNamespace(""), "loaderInfo")
+      coerce              QName(PackageNamespace("flash.display"), "LoaderInfo")
+      setlocal1
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bytesLoaded")
+      convert_i
+      setlocal2
+
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bytesTotal")
+      convert_i
+      setlocal3
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      iffalse             L22
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      callproperty        QName(PackageNamespace(""), "getItemCount"), 0
+      convert_i
+      jump                L23
+
+L22:
+      pushbyte            0
+L23:
+      convert_i
+      setlocal            4
+
+      pushbyte            0
+      setlocal            5
+
+      jump                L48
+
+L28:
+      label
+      getlocal2
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "getItem"), 1
+      getproperty         QName(PackageNamespace(""), "loaded")
+      add
+      convert_i
+      setlocal2
+
+      getlocal3
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal            5
+      callproperty        QName(PackageNamespace(""), "getItem"), 1
+      getproperty         QName(PackageNamespace(""), "total")
+      add
+      convert_i
+      setlocal3
+
+      inclocal_i          5
+L48:
+      getlocal            5
+      getlocal            4
+      iflt                L28
+
+      pushstring          "loaded"
+      getlocal2
+      pushstring          "total"
+      getlocal3
+      newobject           2
+      returnvalue
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "dispatchAppEndEvent")
+   method
+    refid "mx.preloaders:Preloader/instance/mx.preloaders:Preloader/instance/dispatchAppEndEvent"
+    param QName(PackageNamespace(""), "Object")
+    returns QName(PackageNamespace(""), "void")
+    flag HAS_OPTIONAL
+    optional Null()
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("mx.events"), "FlexEvent")
+      getlex              QName(PackageNamespace("mx.events"), "FlexEvent")
+      getproperty         QName(PackageNamespace(""), "INIT_COMPLETE")
+      constructprop       QName(PackageNamespace("mx.events"), "FlexEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "showDisplay")
+      iftrue              L14
+
+      getlocal0
+      pushnull
+      callpropvoid        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClassCompleteHandler"), 1
+
+L14:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslProgressHandler")
+   method
+    refid "mx.preloaders:Preloader/instance/http://www.adobe.com/2006/flex/mx/internal:rslProgressHandler"
+    param QName(PackageNamespace("flash.events"), "ProgressEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      callproperty        QName(PackageNamespace(""), "getIndex"), 0
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getItem"), 1
+      coerce              QName(PackageNamespace("mx.core"), "RSLItem")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("mx.events"), "RSLEvent")
+      getlex              QName(PackageNamespace("mx.events"), "RSLEvent")
+      getproperty         QName(PackageNamespace(""), "RSL_PROGRESS")
+      constructprop       QName(PackageNamespace("mx.events"), "RSLEvent"), 1
+      coerce              QName(PackageNamespace("mx.events"), "RSLEvent")
+      dup
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      equals
+      setproperty         QName(PackageNamespace(""), "isResourceModule")
+
+      getlocal            4
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bytesLoaded")
+      setproperty         QName(PackageNamespace(""), "bytesLoaded")
+
+      getlocal            4
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "bytesTotal")
+      setproperty         QName(PackageNamespace(""), "bytesTotal")
+
+      getlocal            4
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "rslIndex")
+
+      getlocal            4
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      callproperty        QName(PackageNamespace(""), "getItemCount"), 0
+      setproperty         QName(PackageNamespace(""), "rslTotal")
+
+      getlocal            4
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "urlRequest")
+      setproperty         QName(PackageNamespace(""), "url")
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslCompleteHandler")
+   method
+    refid "mx.preloaders:Preloader/instance/http://www.adobe.com/2006/flex/mx/internal:rslCompleteHandler"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      callproperty        QName(PackageNamespace(""), "getIndex"), 0
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getItem"), 1
+      coerce              QName(PackageNamespace("mx.core"), "RSLItem")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("mx.events"), "RSLEvent")
+      getlex              QName(PackageNamespace("mx.events"), "RSLEvent")
+      getproperty         QName(PackageNamespace(""), "RSL_COMPLETE")
+      constructprop       QName(PackageNamespace("mx.events"), "RSLEvent"), 1
+      coerce              QName(PackageNamespace("mx.events"), "RSLEvent")
+      dup
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      equals
+      setproperty         QName(PackageNamespace(""), "isResourceModule")
+
+      getlocal            4
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "total")
+      setproperty         QName(PackageNamespace(""), "bytesLoaded")
+
+      getlocal            4
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "total")
+      setproperty         QName(PackageNamespace(""), "bytesTotal")
+
+      getlocal            4
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "target")
+      getlex              QName(PackageNamespace("flash.display"), "LoaderInfo")
+      astypelate
+      setproperty         QName(PackageNamespace(""), "loaderInfo")
+
+      getlocal            4
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "rslIndex")
+
+      getlocal            4
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      callproperty        QName(PackageNamespace(""), "getItemCount"), 0
+      setproperty         QName(PackageNamespace(""), "rslTotal")
+
+      getlocal            4
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "urlRequest")
+      setproperty         QName(PackageNamespace(""), "url")
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "loadingRSLs")
+      coerce_a
+      convert_b
+      dup
+      iffalse             L66
+
+      pop
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      coerce_a
+      convert_b
+L66:
+      dup
+      iffalse             L75
+
+      pop
+      getlocal2
+      pushbyte            1
+      add
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "rslTotal")
+      equals
+L75:
+      iffalse             L82
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "loadingRSLs")
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "waitingToLoadResourceModules")
+
+L82:
+      getlocal0
+      getlocal2
+      pushbyte            1
+      add
+      getlocal            4
+      getproperty         QName(PackageNamespace(""), "rslTotal")
+      equals
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslDone")
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+   method
+    refid "mx.preloaders:Preloader/instance/http://www.adobe.com/2006/flex/mx/internal:rslErrorHandler"
+    param QName(PackageNamespace("flash.events"), "ErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      callproperty        QName(PackageNamespace(""), "getIndex"), 0
+      convert_i
+      setlocal2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal2
+      callproperty        QName(PackageNamespace(""), "getItem"), 1
+      coerce              QName(PackageNamespace("mx.core"), "RSLItem")
+      setlocal3
+
+      findpropstrict      QName(PackageNamespace("mx.events"), "RSLEvent")
+      getlex              QName(PackageNamespace("mx.events"), "RSLEvent")
+      getproperty         QName(PackageNamespace(""), "RSL_ERROR")
+      constructprop       QName(PackageNamespace("mx.events"), "RSLEvent"), 1
+      coerce              QName(PackageNamespace("mx.events"), "RSLEvent")
+      dup
+      setlocal            4
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      equals
+      setproperty         QName(PackageNamespace(""), "isResourceModule")
+
+      getlocal            4
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "bytesLoaded")
+
+      getlocal            4
+      pushbyte            0
+      setproperty         QName(PackageNamespace(""), "bytesTotal")
+
+      getlocal            4
+      getlocal2
+      setproperty         QName(PackageNamespace(""), "rslIndex")
+
+      getlocal            4
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      callproperty        QName(PackageNamespace(""), "getItemCount"), 0
+      setproperty         QName(PackageNamespace(""), "rslTotal")
+
+      getlocal            4
+      getlocal3
+      getproperty         QName(PackageNamespace(""), "urlRequest")
+      setproperty         QName(PackageNamespace(""), "url")
+
+      getlocal            4
+      findpropstrict      QName(PackageNamespace(""), "decodeURI")
+      getlocal1
+      getproperty         QName(PackageNamespace(""), "text")
+      callproperty        QName(PackageNamespace(""), "decodeURI"), 1
+      setproperty         QName(PackageNamespace(""), "errorText")
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      getlocal            4
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timerHandler")
+   method
+    refid "mx.preloaders:Preloader/instance/mx.preloaders:Preloader/instance/timerHandler"
+    param QName(PackageNamespace("flash.events"), "TimerEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 7
+     localcount 5
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlex              QName(PackageNamespace(""), "root")
+      iftrue              L5
+
+      returnvoid
+
+L5:
+      getlocal0
+      callproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "getByteValues"), 0
+      coerce              QName(PackageNamespace(""), "Object")
+      setlocal2
+
+      getlocal2
+      getproperty         Multiname("loaded", [PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), Namespace("http://www.adobe.com/2006/flex/mx/internal"), PackageNamespace(""), PrivateNamespace(null, "mx.preloaders:Preloader/instance#1"), PackageNamespace("mx.preloaders"), PackageInternalNs("mx.preloaders"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.preloaders:Preloader"), StaticProtectedNs("mx.preloaders:Preloader"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      convert_i
+      setlocal3
+
+      getlocal2
+      getproperty         Multiname("total", [PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), Namespace("http://www.adobe.com/2006/flex/mx/internal"), PackageNamespace(""), PrivateNamespace(null, "mx.preloaders:Preloader/instance#1"), PackageNamespace("mx.preloaders"), PackageInternalNs("mx.preloaders"), Namespace("http://adobe.com/AS3/2006/builtin"), ProtectedNamespace("mx.preloaders:Preloader"), StaticProtectedNs("mx.preloaders:Preloader"), StaticProtectedNs("flash.display:Sprite"), StaticProtectedNs("flash.display:DisplayObjectContainer"), StaticProtectedNs("flash.display:InteractiveObject"), StaticProtectedNs("flash.display:DisplayObject"), StaticProtectedNs("flash.events:EventDispatcher"), StaticProtectedNs("Object")])
+      convert_i
+      setlocal            4
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "ProgressEvent")
+      getlex              QName(PackageNamespace("flash.events"), "ProgressEvent")
+      getproperty         QName(PackageNamespace(""), "PROGRESS")
+      pushfalse
+      pushfalse
+      getlocal3
+      getlocal            4
+      constructprop       QName(PackageNamespace("flash.events"), "ProgressEvent"), 5
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "waitingToLoadResourceModules")
+      iffalse             L58
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "applicationDomain")
+      pushstring          "mx.resources::ResourceManager"
+      callproperty        QName(PackageNamespace(""), "hasDefinition"), 1
+      iffalse             L58
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "waitingToLoadResourceModules")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslDone")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslProgressHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslCompleteHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      callpropvoid        QName(PackageNamespace(""), "load"), 5
+
+L58:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslDone")
+      convert_b
+      dup
+      iffalse             L109
+
+      pop
+      getlocal3
+      getlocal            4
+      greaterequals
+      dup
+      iffalse             L73
+
+      pop
+      getlocal            4
+      pushbyte            0
+      greaterthan
+L73:
+      dup
+      iftrue              L85
+
+      pop
+      getlocal            4
+      pushbyte            0
+      equals
+      dup
+      iffalse             L85
+
+      pop
+      getlocal3
+      pushbyte            0
+      greaterthan
+L85:
+      dup
+      iftrue              L109
+
+      pop
+      getlex              QName(PackageNamespace(""), "root")
+      getlex              QName(PackageNamespace("flash.display"), "MovieClip")
+      istypelate
+      dup
+      iffalse             L100
+
+      pop
+      findpropstrict      QName(PackageNamespace("flash.display"), "MovieClip")
+      getlex              QName(PackageNamespace(""), "root")
+      callproperty        QName(PackageNamespace("flash.display"), "MovieClip"), 1
+      getproperty         QName(PackageNamespace(""), "totalFrames")
+      pushbyte            2
+      greaterthan
+L100:
+      dup
+      iffalse             L109
+
+      pop
+      findpropstrict      QName(PackageNamespace("flash.display"), "MovieClip")
+      getlex              QName(PackageNamespace(""), "root")
+      callproperty        QName(PackageNamespace("flash.display"), "MovieClip"), 1
+      getproperty         QName(PackageNamespace(""), "framesLoaded")
+      pushbyte            2
+      greaterequals
+L109:
+      iffalse             L177
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "sentDocFrameReady")
+      iftrue              L123
+
+      getlocal0
+      pushtrue
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "sentDocFrameReady")
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("mx.events"), "FlexEvent")
+      getlex              QName(PackageNamespace("mx.events"), "FlexEvent")
+      getproperty         QName(PackageNamespace(""), "PRELOADER_DOC_FRAME_READY")
+      constructprop       QName(PackageNamespace("mx.events"), "FlexEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+
+L123:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "waitingToLoadResourceModules")
+      iffalse             L155
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "applicationDomain")
+      pushstring          "mx.resources::ResourceManager"
+      callproperty        QName(PackageNamespace(""), "hasDefinition"), 1
+      iffalse             L155
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "waitingToLoadResourceModules")
+
+      getlocal0
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "resourceModuleListLoader")
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+
+      getlocal0
+      pushfalse
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslDone")
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "rslListLoader")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslProgressHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslCompleteHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      getlocal0
+      getproperty         QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "rslErrorHandler")
+      callpropvoid        QName(PackageNamespace(""), "load"), 5
+
+      returnvoid
+
+L155:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timer")
+      getlex              QName(PackageNamespace("flash.events"), "TimerEvent")
+      getproperty         QName(PackageNamespace(""), "TIMER")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timerHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "timer")
+      callpropvoid        QName(PackageNamespace(""), "reset"), 0
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("flash.events"), "Event")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      constructprop       QName(PackageNamespace("flash.events"), "Event"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("mx.events"), "FlexEvent")
+      getlex              QName(PackageNamespace("mx.events"), "FlexEvent")
+      getproperty         QName(PackageNamespace(""), "INIT_PROGRESS")
+      constructprop       QName(PackageNamespace("mx.events"), "FlexEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+L177:
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "ioErrorHandler")
+   method
+    refid "mx.preloaders:Preloader/instance/mx.preloaders:Preloader/instance/ioErrorHandler"
+    param QName(PackageNamespace("flash.events"), "IOErrorEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClassCompleteHandler")
+   method
+    refid "mx.preloaders:Preloader/instance/mx.preloaders:Preloader/instance/displayClassCompleteHandler"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      iffalse             L12
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClass")
+      getlex              QName(PackageNamespace("flash.events"), "Event")
+      getproperty         QName(PackageNamespace(""), "COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "displayClassCompleteHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+L12:
+      getlex              QName(PackageNamespace(""), "root")
+      iffalse             L21
+
+      getlex              QName(PackageNamespace(""), "root")
+      getproperty         QName(PackageNamespace(""), "loaderInfo")
+      getlex              QName(PackageNamespace("flash.events"), "IOErrorEvent")
+      getproperty         QName(PackageNamespace(""), "IO_ERROR")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "ioErrorHandler")
+      callpropvoid        QName(PackageNamespace(""), "removeEventListener"), 2
+
+L21:
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "app")
+      iffalse             L52
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "app")
+      pushstring          "validatePropertiesComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appProgressHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "app")
+      pushstring          "validateSizeComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appProgressHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "app")
+      pushstring          "validateDisplayListComplete"
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appProgressHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "app")
+      getlex              QName(PackageNamespace("mx.events"), "FlexEvent")
+      getproperty         QName(PackageNamespace(""), "CREATION_COMPLETE")
+      getlocal0
+      getproperty         QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appCreationCompleteHandler")
+      callpropvoid        QName(Namespace("flash.events:IEventDispatcher"), "removeEventListener"), 2
+
+      getlocal0
+      pushnull
+      initproperty        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "app")
+
+L52:
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("mx.events"), "FlexEvent")
+      getlex              QName(PackageNamespace("mx.events"), "FlexEvent")
+      getproperty         QName(PackageNamespace(""), "PRELOADER_DONE")
+      constructprop       QName(PackageNamespace("mx.events"), "FlexEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appCreationCompleteHandler")
+   method
+    refid "mx.preloaders:Preloader/instance/mx.preloaders:Preloader/instance/appCreationCompleteHandler"
+    param QName(PackageNamespace("mx.events"), "FlexEvent")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 1
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      getlocal0
+      callpropvoid        QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "dispatchAppEndEvent"), 0
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+  trait method QName(PrivateNamespace(null, "mx.preloaders:Preloader/instance#0"), "appProgressHandler")
+   method
+    refid "mx.preloaders:Preloader/instance/mx.preloaders:Preloader/instance/appProgressHandler"
+    param QName(PackageNamespace("flash.events"), "Event")
+    returns QName(PackageNamespace(""), "void")
+    body
+     maxstack 3
+     localcount 2
+     initscopedepth 9
+     maxscopedepth 10
+     code
+      getlocal0
+      pushscope
+
+      findpropstrict      QName(PackageNamespace(""), "dispatchEvent")
+      findpropstrict      QName(PackageNamespace("mx.events"), "FlexEvent")
+      getlex              QName(PackageNamespace("mx.events"), "FlexEvent")
+      getproperty         QName(PackageNamespace(""), "INIT_PROGRESS")
+      constructprop       QName(PackageNamespace("mx.events"), "FlexEvent"), 1
+      callpropvoid        QName(PackageNamespace(""), "dispatchEvent"), 1
+
+      returnvoid
+     end ; code
+    end ; body
+   end ; method
+  end ; trait
+ end ; instance
+ cinit
+  refid "mx.preloaders:Preloader/class/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 8
+   maxscopedepth 9
+   code
+    getlocal0
+    pushscope
+
+    findproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+    pushstring          "4.0.0.14159"
+    initproperty        QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait const QName(Namespace("http://www.adobe.com/2006/flex/mx/internal"), "VERSION") slotid 1 type QName(PackageNamespace(""), "String") value Utf8("4.0.0.14159") end
+end ; class

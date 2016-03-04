@@ -1,0 +1,29 @@
+script
+ sinit
+  refid "mx.managers:SystemChildrenList/init"
+  body
+   maxstack 2
+   localcount 1
+   initscopedepth 1
+   maxscopedepth 3
+   code
+    getlocal0
+    pushscope
+
+    findpropstrict      Multiname("SystemChildrenList", [PackageNamespace("mx.managers")])
+    getlex              QName(PackageNamespace(""), "Object")
+    pushscope
+
+    getlex              QName(PackageNamespace(""), "Object")
+    newclass            "mx.managers:SystemChildrenList"
+    popscope
+    initproperty        QName(PackageNamespace("mx.managers"), "SystemChildrenList")
+
+    returnvoid
+   end ; code
+  end ; body
+ end ; method
+ trait class QName(PackageNamespace("mx.managers"), "SystemChildrenList")
+  #include "SystemChildrenList.class.asasm"
+ end ; trait
+end ; script
