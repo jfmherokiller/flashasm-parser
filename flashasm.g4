@@ -237,6 +237,10 @@ FROM: 'from';
 INCREMENT_I:'increment_i';
 CALL:'call' SPACES INTEGER;
 IN:'in';
+METADATA:'metadata';
+metadata:METADATA QUOTED_STRING;
+ITEM:'item';
+item:ITEM NULL QUOTED_STRING;
 TESTTOKEN:'JUST A TEST';
 //start here
 flashasm: program EOF;
