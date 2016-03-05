@@ -3,8 +3,10 @@
     <properties maven-id="org.antlr:antlr4:4.5.2-1" />
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4/4.5.2-1/antlr4-4.5.2-1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4/4.5.2-1/antlr4-4.5.2-1.jar!/" />
     </CLASSES>
     <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4/4.5.2-1/antlr4-4.5.2-1-javadoc.jar!/" />
       <root url="jar://$MAVEN_REPOSITORY$/org/antlr/antlr4/4.5.2-1/antlr4-4.5.2-1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES />
